@@ -1,0 +1,10 @@
+<strong> Welcome to app1 from project1 {{usrname}} </strong>
+<h5> -- Account information --</h5>
+Your username: {{ usrname }}<br>
+Your e-mail:   {{ email }}<br>
+Your password: {{ password }}<br>
+<br>
+<h5> -- Launch new process --</h5>
+<form action="{% url 'app1:requestProcess' %}" type="GET">
+<button type="submit"> Request a new process </button><br>
+</form>

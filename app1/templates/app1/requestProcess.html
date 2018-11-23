@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Request a new process</title>
+</head>
+<body>
+    <form action="{% url 'app1:requestProcess' %}" method="POST">
+        <fieldset>
+            <legend> login </legend>
+            {% csrf_token %}
+            {{ form }}
+        <br>
+        <input type="submit" value="Request process" />
+        </fieldset>
+    </form>
+</body>
+</html>

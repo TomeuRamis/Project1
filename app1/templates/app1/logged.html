@@ -1,9 +1,14 @@
 <strong> Welcome to app1 from project1 {{usrname}} </strong>
 <h5> -- Account information --</h5>
-Your username: {{ usrname }}<br>
-Your e-mail:   {{ email }}<br>
-Your password: {{ password }}<br>
-<br>
+Your username: {{ user_info.usrname }}<br>
+Your e-mail:   {{ user_info.email }}<br>
+
+<h5> -- My processes --</h5>
+{% for request in requests %}
+    {% if request.user.user_name == user_info.usrname %}
+        <li> {{ request }} </li>
+    {% endif %}
+{% endfor %}
 <h5> -- Launch new process --</h5>
 <form action="{% url 'app1:requestProcess' %}" type="GET">
 <button type="submit"> Request a new process </button><br>

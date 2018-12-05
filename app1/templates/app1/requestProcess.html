@@ -7,7 +7,7 @@
 <body>
     <form action="{% url 'app1:requestProcess' %}" method="POST">
         <fieldset>
-            <legend> login </legend>
+            <legend> Request </legend>
             {% csrf_token %}
             {{ form }}
         <br>

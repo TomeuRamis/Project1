@@ -7,6 +7,8 @@ import os
 
 # Create your views here.
 
+
+
 def index(request):
     return render(request, "app1/index.html")
 
@@ -64,5 +66,9 @@ def requestprocess(request):
                                                             'user': request.GET['user']})
 
 
-def checkProcesses():
-    print("hola")
+def request_successful(request):
+    if request.method == 'GET':
+        if request.GET['back_to_main']:
+            return render(request, , {'user': request.GET['usr']})
+        else:
+            return render(request, "app1/requestProcess.html", {'user': request.GET['user']})

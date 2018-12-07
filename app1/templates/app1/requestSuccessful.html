@@ -6,8 +6,11 @@
 </head>
 <body>
     <h5> Your request was successfuly processed</h5>
-    <!-- <a href="{% url 'app1:logged' %}"> Go back to the main page </a> <br>
-    or<br>-->
-    <a href="{% url 'app1:requestProcess' %}"> make another request for a new process </a>
+    <form action="{% url 'app1:request_successful' %}" method="GET">
+        <input type="hidden" name="usr" value="{{ user }}"/>
+        <button type="submit" name="back_to_main" value="back_to_main"> Go back to the main page </button><br>
+        or<br>
+        <button type="submit" name="make_another_request" value="make_request"> make another request for a new process </button>
+    </form>
 </body>
 </html>

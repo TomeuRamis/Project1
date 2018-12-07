@@ -5,7 +5,7 @@ label {
   text-align: left;
 }
 </style>
-<form  method="post" action="{% url 'app1:logged' %}"> {% csrf_token %}
+<form  method="POST" action="{% url 'app1:login' %}"> {% csrf_token %}
     <fieldset>
         <legend> login </legend>
         

@@ -5,10 +5,12 @@ label {
   text-align: left;
 }
 </style>
-<form  method="post" action="{% url 'app1:logged' %}"> {% csrf_token %}
+
+<span style="color: red; "> ERROR: Username or email incorrect, try again </span>
+<form  method="post" action="{% url 'app1:login' %}"> {% csrf_token %}
     <fieldset>
         <legend> login </legend>
-        <label> <span style="color: red; "> ERROR: Username or email incorrect, try again </span> </label>
+
         <label> username </label>
         <input type="text" name="usrname" required><br>
         

@@ -5,13 +5,18 @@
     <title>Request a new process</title>
 </head>
 <body>
+    {% if error %}
+        <span style="color: red; "> ERROR: Something went wrong, try again </span>
+    {% endif %}
+
     <form action="{% url 'app1:requestProcess' %}" method="POST">
         <fieldset>
             <legend> Request </legend>
             {% csrf_token %}
             {{ form }}
         <br>
-        <input type="submit" value="Request process" />
+            <input type="hidden" name="user" value="{{ user }}">
+            <input type="submit" value="Request process" />
         </fieldset>
     </form>
 </body>

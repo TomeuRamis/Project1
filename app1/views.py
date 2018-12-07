@@ -47,7 +47,7 @@ def requestprocess(request):
             json.dump({"id": r.id,
                        "type": type_of_process,
                        "date of creation": str(r.date_of_creation),
-                       "pid": None,
+                       "pid": -1,
                        "started": False,
                        "finished": False}, f)
             f.close()

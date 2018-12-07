@@ -18,7 +18,7 @@ class Request(models.Model):
     )
     type_of_process = models.CharField(max_length=20, choices=TYPE_OF_PROCESS)
     date_of_creation = models.DateTimeField(auto_now_add=True)
-    pid = models.IntegerField(default=None)
+    pid = models.IntegerField(default=-1)
     started = models.BooleanField(default=False)
     finished = models.BooleanField(default=False)
     user = models.ForeignKey(User, on_delete=models.CASCADE)

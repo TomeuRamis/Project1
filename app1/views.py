@@ -5,6 +5,12 @@ import json
 import os
 
 
+absPath = os.getcwd()
+pathReq = absPath + "ProcessManager/Files/Requests/"
+pathInProgress = absPath + "ProcessManager/Files/InProgress/"
+pathFinish = absPath + "ProcessManager/Files/Finished/"
+
+
 # Create your views here.
 
 def index(request):
@@ -30,7 +36,9 @@ def login(request):
 
 
 def logged(request):
+
     user = User.objects.get(user_name=request.session['username'])
+    check_processes(user)
     requests = Request.objects.filter(user=user)
     context = {'user': user,
                'requests': requests}
@@ -47,7 +55,7 @@ def requestprocess(request):
             r = Request(type_of_process=type_of_process, user=user)
             r.save()
             # Create the new file to store the Request
-            f = open(os.getcwd() + "/app1/ProcessManager/Files/Requests/request" + str(r.id), "w+")
+            f = open(pathReq + "request" + str(r.id), "w+")
             json.dump({"id": r.id,
                        "type": type_of_process,
                        "date of creation": str(r.date_of_creation),
@@ -81,21 +89,16 @@ def request_successful(request):
                           {'user': user})
 
 
-absPath = os.getcwd()
-pathReq = absPath + "/Files/Requests/"
-pathInProgress = absPath + "/Files/InProgress/"
-pathFinish = absPath + "/Files/Finished/"
-
-
 # Look at the Files folder to update the user's requests
 def check_processes(user):
     try:
         for i, file in enumerate(os.listdir(pathInProgress)):
             f = open(pathInProgress + file, 'r')
             request = json.load(f)
-            database_request = Request.objets.get(request['id'])
+            user_requests = Request.objets.filter(user=user).filter(pk=request['id'])
+            user_requests.update(started=True)
 
     except IOError:
-        print("IO error")
+        print("I/O error")
     except Request.DoesNotExist:
         print("The process with id: " + i + " was not found on the Data Base")

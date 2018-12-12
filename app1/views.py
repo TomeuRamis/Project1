@@ -18,7 +18,6 @@ def login(request):
             if user == User.objects.get(email=request.POST['email']):
                 request.session['username'] = user.user_name
                 request.session['email'] = user.email
-                #requests = Request.objects.filter(user=user)
                 context = {'user': user,
                            'access': True}
                 return render(request, "app1/login.html", context)
@@ -48,7 +47,7 @@ def requestprocess(request):
             r = Request(type_of_process=type_of_process, user=user)
             r.save()
             # Create the new file to store the Request
-            f = open(os.getcwd()+"/app1/ProcessManager/Files/Requests/request"+str(r.id), "w+")
+            f = open(os.getcwd() + "/app1/ProcessManager/Files/Requests/request" + str(r.id), "w+")
             json.dump({"id": r.id,
                        "type": type_of_process,
                        "date of creation": str(r.date_of_creation),
@@ -56,7 +55,6 @@ def requestprocess(request):
                        "started": False,
                        "finished": False}, f)
             f.close()
-            request.session['processes'] = Request.objects.filter(user=user)
             return render(request, "app1/requestSuccessful.html", {'user': user})
         else:
             form = ProcessType()
@@ -71,12 +69,33 @@ def requestprocess(request):
 
 
 def request_successful(request):
+    user = User.objects.get(user_name=request.session['username'])
     if request.method == 'GET':
         if request.GET['back_to_main']:
             return render(request, "app1/logged.html",
-                          {'user': User.objects.get(user_name=request.session['username']),
-                           'requests': request.session['processes']})
+                          {'user': user,
+                           'requests': Request.objects.filter(user=user)})
         else:
             return render(request,
                           "app1/requestProcess.html",
-                          {'user': User.objects.get(user_name=request.session['username'])})
+                          {'user': user})
+
+
+absPath = os.getcwd()
+pathReq = absPath + "/Files/Requests/"
+pathInProgress = absPath + "/Files/InProgress/"
+pathFinish = absPath + "/Files/Finished/"
+
+
+# Look at the Files folder to update the user's requests
+def check_processes(user):
+    try:
+        for i, file in enumerate(os.listdir(pathInProgress)):
+            f = open(pathInProgress + file, 'r')
+            request = json.load(f)
+            database_request = Request.objets.get(request['id'])
+
+    except IOError:
+        print("IO error")
+    except Request.DoesNotExist:
+        print("The process with id: " + i + " was not found on the Data Base")

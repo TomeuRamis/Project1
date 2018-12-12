@@ -7,37 +7,40 @@ import os
 
 # Create your views here.
 
-
-
 def index(request):
     return render(request, "app1/index.html")
 
 
 def login(request):
     if request.method == 'POST':
-        user = User.objects.get(user_name=request.POST['usrname'])
-        if user == User.objects.get(email=request.POST['email']):
-            context = {"user": user,
-                       "requests": Request.objects.filter(user=user)}
-            return render(request, "app1/logged.html", context)
-        else:
+        try:
+            user = User.objects.get(user_name=request.POST['username'])
+            if user == User.objects.get(email=request.POST['email']):
+                request.session['username'] = user.user_name
+                request.session['email'] = user.email
+                #requests = Request.objects.filter(user=user)
+                context = {'user': user,
+                           'access': True}
+                return render(request, "app1/login.html", context)
+            else:
+                return render(request, "app1/loginFailed.html")
+        except User.DoesNotExist:
             return render(request, "app1/loginFailed.html")
     else:
         return render(request, "app1/login.html")
 
 
 def logged(request):
-    user = {"usrname": request.POST['usrname'],
-            "email": request.POST['email']}
-    requests = Request.objects.all()
-    context = {"user": user,
-               "requests": requests}
+    user = User.objects.get(user_name=request.session['username'])
+    requests = Request.objects.filter(user=user)
+    context = {'user': user,
+               'requests': requests}
     return render(request, "app1/logged.html", context)
 
 
 def requestprocess(request):
+    user = User.objects.get(user_name=request.session['username'])
     if request.method == 'POST':
-        user = User.objects.get(user_name=request.POST['user'])
         form = ProcessType(request.POST)
         if form.is_valid():
             type_of_process = form.cleaned_data['type_of_process']
@@ -53,6 +56,7 @@ def requestprocess(request):
                        "started": False,
                        "finished": False}, f)
             f.close()
+            request.session['processes'] = Request.objects.filter(user=user)
             return render(request, "app1/requestSuccessful.html", {'user': user})
         else:
             form = ProcessType()
@@ -63,12 +67,16 @@ def requestprocess(request):
         form = ProcessType()
         return render(request, "app1/requestProcess.html", {'form': form,
                                                             'error': False,
-                                                            'user': request.GET['user']})
+                                                            'user': user})
 
 
 def request_successful(request):
     if request.method == 'GET':
         if request.GET['back_to_main']:
-            return render(request, , {'user': request.GET['usr']})
+            return render(request, "app1/logged.html",
+                          {'user': User.objects.get(user_name=request.session['username']),
+                           'requests': request.session['processes']})
         else:
-            return render(request, "app1/requestProcess.html", {'user': request.GET['user']})
+            return render(request,
+                          "app1/requestProcess.html",
+                          {'user': User.objects.get(user_name=request.session['username'])})

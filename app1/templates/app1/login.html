@@ -5,16 +5,22 @@ label {
   text-align: left;
 }
 </style>
-<form  method="POST" action="{% url 'app1:login' %}"> {% csrf_token %}
-    <fieldset>
-        <legend> login </legend>
-        
-        <label> username </label>
-        <input type="text" name="usrname" required><br>
-        
-        <label> e-mail</label>
-        <input type="text" name="email" required><br>
-        
-        <input type="submit" value="Submit">
-    </fieldset>
-</form>
+{% if access == True %} <!-- if the access has been granted -->
+    <form name="form"method="GET" action="{% url 'app1:logged' %}">
+    </form>
+    <SCRIPT LANGUAGE="JavaScript">document.forms[0].submit();</SCRIPT> <!-- Script to auto send the form -->
+{% else %}
+    <form  method="POST" action="{% url 'app1:login' %}"> {% csrf_token %}
+        <fieldset>
+            <legend> login </legend>
+
+            <label> username </label>
+            <input type="text" name="username" required><br>
+
+            <label> e-mail</label>
+            <input type="text" name="email" required><br>
+
+            <input type="submit" value="Submit">
+        </fieldset>
+    </form>
+{% endif %}

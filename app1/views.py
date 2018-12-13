@@ -107,7 +107,7 @@ def request_successful(request):
 # Method that takes all of the user's requests and looks for upates at the Files folder.
 # First checks requests that have been not started and searches them in the InProgress folder,
 # the remaining processes that have started are searched in the Finished folder,
-# and latsly, searches started and not finished requests in the Finished folder.
+# and lastly, searches started and not finished requests in the Finished folder.
 def check_processes(user):
     user_path = user['user_name'] + '/'
 

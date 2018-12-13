@@ -94,11 +94,17 @@ def check_processes(user):
     try:
         for i, file in enumerate(os.listdir(pathInProgress)):
             f = open(pathInProgress + file, 'r')
-            request = json.load(f)
-            user_requests = Request.objets.filter(user=user).filter(pk=request['id'])
-            user_requests.update(started=True)
+            try:
+                request = json.load(f)
+                database_request = Request.objets.filter(user=user).filter(pk=request['id'])
+                if not database_request['started']:
+                    database_request.update(started=True)
+
+            except Request.DoesNotExist:
+                print("The process with id: " + i + " was not found on the Data Base")
+
+        for i, file in enumerate(os.listdir((pathFinish))):
+            f = open()
 
     except IOError:
         print("I/O error")
-    except Request.DoesNotExist:
-        print("The process with id: " + i + " was not found on the Data Base")

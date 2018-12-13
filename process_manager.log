@@ -1,0 +1,159 @@
+[13/12/2018 19:19:21] WARNING: Not Found: /favicon.ico
+[13/12/2018 19:19:24] WARNING: Not Found: /favicon.ico
+[13/12/2018 19:19:31] WARNING: Not Found: /favicon.ico
+[13/12/2018 19:19:42] WARNING: Not Found: /favicon.ico
+[13/12/2018 19:19:45] WARNING: Not Found: /favicon.ico
+[13/12/2018 19:19:47] WARNING: Not Found: /favicon.ico
+[13/12/2018 19:19:48] WARNING: Not Found: /favicon.ico
+[13/12/2018 19:19:51] WARNING: Not Found: /favicon.ico
+[13/12/2018 19:19:58] WARNING: Not Found: /favicon.ico
+[13/12/2018 19:19:59] WARNING: Not Found: /favicon.ico
+[13/12/2018 19:20:06] INFO: User: admin has logged in.
+[13/12/2018 19:20:06] ERROR: Internal Server Error: /app1/home/
+Traceback (most recent call last):
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/bartomeu/Documents/project1/app1/views.py", line 53, in logged
+    check_processes(user)
+  File "/home/bartomeu/Documents/project1/app1/views.py", line 112, in check_processes
+    user_path = user['user_name'] + '/'
+TypeError: 'User' object is not subscriptable
+[13/12/2018 19:20:06] WARNING: Not Found: /favicon.ico
+[13/12/2018 19:20:06] WARNING: Not Found: /favicon.ico
+[13/12/2018 19:23:25] WARNING: Not Found: /favicon.ico
+[13/12/2018 19:23:26] WARNING: Not Found: /favicon.ico
+[13/12/2018 19:23:34] INFO: User: admin has logged in.
+[13/12/2018 19:23:34] ERROR: Internal Server Error: /app1/home/
+Traceback (most recent call last):
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/bartomeu/Documents/project1/app1/views.py", line 53, in logged
+    check_processes(user)
+  File "/home/bartomeu/Documents/project1/app1/views.py", line 117, in check_processes
+    database_requests = Request.objets.filter(user=user).filter(started=False)
+AttributeError: type object 'Request' has no attribute 'objets'
+[13/12/2018 19:23:34] WARNING: Not Found: /favicon.ico
+[13/12/2018 19:23:34] WARNING: Not Found: /favicon.ico
+[13/12/2018 19:24:09] WARNING: Not Found: /favicon.ico
+[13/12/2018 19:24:11] WARNING: Not Found: /favicon.ico
+[13/12/2018 19:24:15] INFO: User: admin has logged in.
+[13/12/2018 19:24:15] WARNING: Not Found: /favicon.ico
+[13/12/2018 19:24:15] WARNING: Not Found: /favicon.ico
+[13/12/2018 19:25:43] WARNING: Not Found: /favicon.ico
+[13/12/2018 19:25:50] WARNING: Not Found: /favicon.ico
+[13/12/2018 19:25:52] ERROR: Internal Server Error: /app1/requestProcess/
+Traceback (most recent call last):
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/bartomeu/Documents/project1/app1/views.py", line 70, in requestprocess
+    f = open(pathReq + request.session['username'] + "/request" + str(r.id), "w+")
+FileNotFoundError: [Errno 2] No such file or directory: '/home/bartomeu/Documents/project1ProcessManager/Files/Requests/admin/request25'
+[13/12/2018 19:25:52] WARNING: Not Found: /favicon.ico
+[13/12/2018 19:28:07] WARNING: Not Found: /favicon.ico
+[13/12/2018 19:28:08] WARNING: Not Found: /favicon.ico
+[13/12/2018 19:28:13] INFO: User: admin has logged in.
+[13/12/2018 19:28:13] CRITICAL: There was a I/O problem updating the processes of User: admin
+[13/12/2018 19:28:13] WARNING: Not Found: /favicon.ico
+[13/12/2018 19:28:13] WARNING: Not Found: /favicon.ico
+[13/12/2018 19:28:33] WARNING: Not Found: /favicon.ico
+[13/12/2018 19:28:40] WARNING: Not Found: /favicon.ico
+[13/12/2018 19:28:42] WARNING: Not Found: /favicon.ico
+[13/12/2018 19:28:47] WARNING: Not Found: /favicon.ico
+[13/12/2018 19:28:48] ERROR: Internal Server Error: /app1/requestProcess/
+Traceback (most recent call last):
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/bartomeu/Documents/project1/app1/views.py", line 70, in requestprocess
+    f = open(pathReq + request.session['username'] + "/request" + str(r.id), "w+")
+FileNotFoundError: [Errno 2] No such file or directory: '/home/bartomeu/Documents/project1/app1/ProcessManager/Files/Requests/admin/request26'
+[13/12/2018 19:28:48] WARNING: Not Found: /favicon.ico
+[13/12/2018 19:44:08] WARNING: Not Found: /favicon.ico
+[13/12/2018 19:44:09] WARNING: Not Found: /favicon.ico
+[13/12/2018 19:44:14] INFO: User: admin has logged in.
+[13/12/2018 19:44:15] CRITICAL: There was a I/O problem updating the processes of User: admin
+[13/12/2018 19:44:15] WARNING: Not Found: /favicon.ico
+[13/12/2018 19:44:15] WARNING: Not Found: /favicon.ico
+[13/12/2018 19:44:17] WARNING: Not Found: /favicon.ico
+[13/12/2018 19:44:22] WARNING: Not Found: /favicon.ico
+[13/12/2018 19:44:23] WARNING: Not Found: /favicon.ico
+[13/12/2018 19:44:30] WARNING: Not Found: /favicon.ico
+[13/12/2018 19:44:32] WARNING: Not Found: /favicon.ico
+[13/12/2018 19:44:44] ERROR: Internal Server Error: /app1/requestProcess/
+Traceback (most recent call last):
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/bartomeu/Documents/project1/app1/views.py", line 70, in requestprocess
+    f = open(pathReq + request.session['username'] + "/request" + str(r.id), "w+")
+FileNotFoundError: [Errno 2] No such file or directory: '/home/bartomeu/Documents/project1/app1/ProcessManager/Files/Requests/admin/request27'
+[13/12/2018 19:44:44] WARNING: Not Found: /favicon.ico
+[13/12/2018 19:46:16] WARNING: Not Found: /favicon.ico
+[13/12/2018 19:46:17] WARNING: Not Found: /favicon.ico
+[13/12/2018 19:46:23] WARNING: Not Found: /favicon.ico
+[13/12/2018 19:46:24] WARNING: Not Found: /favicon.ico
+[13/12/2018 19:46:29] WARNING: Not Found: /favicon.ico
+[13/12/2018 19:46:39] WARNING: Not Found: /favicon.ico
+[13/12/2018 19:46:43] INFO: User: admin has logged in.
+[13/12/2018 19:46:43] WARNING: Not Found: /favicon.ico
+[13/12/2018 19:46:43] WARNING: Not Found: /favicon.ico
+[13/12/2018 19:46:45] WARNING: Not Found: /favicon.ico
+[13/12/2018 19:46:46] WARNING: Not Found: /favicon.ico
+[13/12/2018 19:46:46] ERROR: Internal Server Error: /app1/requestProcess/
+Traceback (most recent call last):
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/bartomeu/Documents/project1/app1/views.py", line 80, in requestprocess
+    " [id:"+r.id+", type: "+type_of_process)
+TypeError: must be str, not int
+[13/12/2018 19:46:46] WARNING: Not Found: /favicon.ico
+[13/12/2018 19:48:00] WARNING: Not Found: /favicon.ico
+[13/12/2018 19:48:03] ERROR: Internal Server Error: /app1/requestProcess/
+Traceback (most recent call last):
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/bartomeu/Documents/project1/app1/views.py", line 80, in requestprocess
+    " [id:"+r.id+", type: "+type_of_process)
+TypeError: must be str, not int
+[13/12/2018 19:48:03] WARNING: Not Found: /favicon.ico
+[13/12/2018 19:49:06] INFO: User: admin has requested a new process [id:30, type: fibonacci
+[13/12/2018 19:49:06] WARNING: Not Found: /favicon.ico
+[13/12/2018 19:49:10] WARNING: Not Found: /favicon.ico
+[13/12/2018 19:49:17] WARNING: Not Found: /favicon.ico
+[13/12/2018 19:49:18] WARNING: Not Found: /favicon.ico
+[13/12/2018 19:51:18] WARNING: Not Found: /favicon.ico
+[13/12/2018 19:51:21] INFO: User: admin has requested a new process [id:31, type: wait
+[13/12/2018 19:51:21] WARNING: Not Found: /favicon.ico
+[13/12/2018 19:51:22] WARNING: Not Found: /favicon.ico
+[13/12/2018 19:51:37] WARNING: Not Found: /favicon.ico
+[13/12/2018 19:51:38] WARNING: Not Found: /favicon.ico
+[13/12/2018 19:51:45] INFO: User: admin has logged in.
+[13/12/2018 19:51:45] CRITICAL: There was a I/O problem updating the processes of User: admin
+[13/12/2018 19:51:45] WARNING: Not Found: /favicon.ico
+[13/12/2018 19:51:45] WARNING: Not Found: /favicon.ico

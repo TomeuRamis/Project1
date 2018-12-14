@@ -5,12 +5,21 @@
     <title> Request was successful</title>
 </head>
 <body>
-    <h5> Your request was successfuly processed</h5>
-    <form action="{% url 'app1:request_successful' %}" method="GET">
-        <input type="hidden" name="user" value="{{ user }}"/>
-        <button type="submit" name="back_to_main" value="back_to_main"> Go back to the main page </button><br>
-        or<br>
-        <button type="submit" name="make_another_request" value="make_request"> make another request for a new process </button>
+{% if request.method == 'GET' %}
+      <h5> Your request was successfuly processed</h5>
+        <form action="{% url 'app1:request_successful' %}" method="POST"> {% csrf_token %}
+            <button type="submit" value="back_to_main"> Go back to the main page </button><br>
+            or<br>
+            <button type="submit" value="make_request"> make another request for a new process </button>
+        </form>
+{% elif request.POST == 'make_request'%}
+    <form name="form" method="GET" action="{% url 'app1:requestProcess' %}">
     </form>
+    <SCRIPT LANGUAGE="JavaScript">document.forms[0].submit();</SCRIPT> <!-- Script to auto send the form -->
+{% else %}
+    <form name="form" method="GET" action="{% url 'app1:logged' %}">
+    </form>
+    <SCRIPT LANGUAGE="JavaScript">document.forms[0].submit();</SCRIPT> <!-- Script to auto send the form -->
+{% endif %}
 </body>
 </html>

@@ -11,7 +11,7 @@ pathReq = absPath + "/app1/ProcessManager/Files/Requests/"
 pathInProgress = absPath + "/app1/ProcessManager/Files/InProgress/"
 pathFinish = absPath + "/app1/ProcessManager/Files/Finished/"
 
-logging.basicConfig(filename='process_manager.log',
+logging.basicConfig(filename='web_page.log',
                     level=logging.INFO,
                     format='[%(asctime)s] %(levelname)s: %(message)s',
                     datefmt='%d/%m/%Y %H:%M:%S')
@@ -51,10 +51,11 @@ def logged(request):
 
     user = User.objects.get(user_name=request.session['username'])
     check_processes(user)
+    # it could maybe be optimized like: req=Request.obj.filter(user=user) req1 = req.filter(status= ...
     context = {'user': user,
-               'pending_requests': Request.objects.filter(user=user).filter(started=False),
-               'started_requests': Request.objects.filter(user=user).filter(started=True).exclude(finished=False),
-               'finished_requests': Request.objects.filter(user=user).filter(finished=True)}
+               'pending_requests': Request.objects.filter(user=user).filter(status='P'),
+               'started_requests': Request.objects.filter(user=user).filter(status='S'),
+               'finished_requests': Request.objects.filter(user=user).filter(status='F')}
     return render(request, "app1/logged.html", context)
 
 
@@ -77,32 +78,21 @@ def requestprocess(request):
                        "status": 'P'}, f)
             f.close()
             logging.info("User: "+user.user_name+" has requested a new process"
-                                                 " [id:"+str(r.id)+", type: "+type_of_process)
-            return render(request, "app1/requestSuccessful.html", {'user': user})
+                                                 " id:"+str(r.id)+", type: "+type_of_process)
+            return render(request, "app1/requestSuccessful.html")
         else:
             logging.fatal("User: " + user.user_name + " tried to request a process but was an error validating the form")
             form = ProcessType()
             return render(request, "app1/requestProcess.html", {'form': form,
-                                                                'error': True,
-                                                                'user': user})
+                                                                'error': True})
     else:
         form = ProcessType()
         return render(request, "app1/requestProcess.html", {'form': form,
-                                                            'error': False,
-                                                            'user': user})
+                                                            'error': False})
 
 
 def request_successful(request):
-    user = User.objects.get(user_name=request.session['username'])
-    if request.method == 'GET':
-        if request.GET['back_to_main']:
-            return render(request, "app1/logged.html",
-                          {'user': user,
-                           'requests': Request.objects.filter(user=user)})
-        else:
-            return render(request,
-                          "app1/requestProcess.html",
-                          {'user': user})
+    return render(request, "app1/requestSuccessful.html")
 
 
 # Method that takes all of the user's requests and looks for upates at the Files folder.
@@ -115,11 +105,11 @@ def check_processes(user):
     try:
         # Get all processes that have not been started yet, and compare them with
         # the Files/InProgress folder to update the database
-        database_requests = Request.objects.filter(user=user).filter(started=False)
+        database_requests = Request.objects.filter(user=user).filter(status='P')
         for db_req in enumerate(database_requests):
+            os.makedirs(os.path.dirname(pathInProgress + user_path), exist_ok=True)
             for file in enumerate(os.listdir(pathInProgress + user_path)):
-                os.makedirs(os.path.dirname(pathInProgress+user_path), exist_ok=True)
-                f = open(pathInProgress+user_path + file, 'w')
+                f = open(pathInProgress + user_path + str(file), 'w')
                 req = json.load(f)
                 if db_req.id == req['id']:
                     logging.info("Process with id: "+str(req['id'])+" was updated to: started=True")
@@ -127,19 +117,19 @@ def check_processes(user):
                 f.close()
 
         # Get the remaining database-processes that haven't started, and check if they have already finished
-        database_requests = Request.objects.filter(user=user).filter(started=False)
+        database_requests = Request.objects.filter(user=user).filter(status='P')
         for db_req in enumerate(database_requests):
             for file in enumerate(os.listdir(pathFinish + user_path)):
                 os.makedirs(os.path.dirname(pathInProgress + user_path), exist_ok=True)
                 f = open(pathFinish + user_path + file, 'w')
                 req = json.load(f)
                 if db_req.id == req['id']:
-                    logging.info("Process with id: "+ str(req['id'])+" was updated to: finished=True")
+                    logging.info("Process with id: " + str(req['id']) + " was updated to: finished=True")
                     db_req.update(status='F')
                 f.close()
 
         # Get all processes that have been started but have not finished, and updates them
-        database_requests = Request.objects.filter(user=user).filter(started=True).filter(finished=False)
+        database_requests = Request.objects.filter(user=user).filter(status='S')
         for db_req in enumerate(database_requests):
             for file in enumerate(os.listdir(pathFinish + user_path)):
                 os.makedirs(os.path.dirname(pathFinish + user_path), exist_ok=True)
@@ -152,4 +142,3 @@ def check_processes(user):
 
     except IOError:
         logging.fatal("There was a I/O problem updating the processes of User: " + user.user_name)
-        print("I/O error")

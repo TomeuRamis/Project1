@@ -211,3 +211,324 @@ TypeError: must be str, not int
 [14/12/2018 13:26:10] WARNING: Not Found: /favicon.ico
 [14/12/2018 13:26:24] CRITICAL: There was a I/O problem updating the processes of User: admin
 [14/12/2018 13:26:24] WARNING: Not Found: /favicon.ico
+[14/12/2018 20:27:29] WARNING: Not Found: /favicon.ico
+[14/12/2018 20:29:47] WARNING: Not Found: /favicon.ico
+[14/12/2018 20:29:55] INFO: User: admin has logged in.
+[14/12/2018 20:29:55] ERROR: Internal Server Error: /app1/home/
+Traceback (most recent call last):
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/bartomeu/Documents/project1/app1/views.py", line 53, in logged
+    check_processes(user)
+  File "/home/bartomeu/Documents/project1/app1/views.py", line 118, in check_processes
+    database_requests = Request.objects.filter(user=user).filter(started=False)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/db/models/query.py", line 844, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/db/models/query.py", line 862, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/db/models/sql/query.py", line 1263, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/db/models/sql/query.py", line 1287, in _add_q
+    split_subq=split_subq,
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/db/models/sql/query.py", line 1164, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/db/models/sql/query.py", line 1028, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/db/models/sql/query.py", line 1389, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+django.core.exceptions.FieldError: Cannot resolve keyword 'started' into field. Choices are: date_of_creation, id, pid, status, type_of_process, user, user_id
+[14/12/2018 20:29:55] WARNING: Not Found: /favicon.ico
+[14/12/2018 20:29:55] WARNING: Not Found: /favicon.ico
+[14/12/2018 20:33:32] ERROR: Internal Server Error: /app1/home/
+Traceback (most recent call last):
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/bartomeu/Documents/project1/app1/views.py", line 53, in logged
+    check_processes(user)
+  File "/home/bartomeu/Documents/project1/app1/views.py", line 119, in check_processes
+    database_requests = Request.objects.filter(user=user).filter(started=False)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/db/models/query.py", line 844, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/db/models/query.py", line 862, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/db/models/sql/query.py", line 1263, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/db/models/sql/query.py", line 1287, in _add_q
+    split_subq=split_subq,
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/db/models/sql/query.py", line 1164, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/db/models/sql/query.py", line 1028, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/db/models/sql/query.py", line 1389, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+django.core.exceptions.FieldError: Cannot resolve keyword 'started' into field. Choices are: date_of_creation, id, pid, status, type_of_process, user, user_id
+[14/12/2018 20:33:32] WARNING: Not Found: /favicon.ico
+[14/12/2018 20:34:50] WARNING: Not Found: /favicon.ico
+[14/12/2018 20:35:04] WARNING: Not Found: /favicon.ico
+[14/12/2018 20:35:05] INFO: User: admin has requested a new process [id:32, type: fibonacci
+[14/12/2018 20:35:05] WARNING: Not Found: /favicon.ico
+[14/12/2018 20:35:06] WARNING: Not Found: /favicon.ico
+[14/12/2018 20:37:03] WARNING: Not Found: /favicon.ico
+[14/12/2018 20:37:47] WARNING: Not Found: /favicon.ico
+[14/12/2018 20:37:50] WARNING: Not Found: /favicon.ico
+[14/12/2018 20:37:53] WARNING: Not Found: /favicon.ico
+[14/12/2018 20:41:26] WARNING: Not Found: /favicon.ico
+[14/12/2018 20:41:28] INFO: User: admin has requested a new process [id:33, type: fibonacci
+[14/12/2018 20:41:28] WARNING: Not Found: /favicon.ico
+[14/12/2018 20:41:29] WARNING: Not Found: /favicon.ico
+[14/12/2018 20:41:39] WARNING: Not Found: /favicon.ico
+[14/12/2018 20:41:40] WARNING: Not Found: /favicon.ico
+[14/12/2018 20:41:45] WARNING: Not Found: /favicon.ico
+[14/12/2018 20:41:48] WARNING: Not Found: /favicon.ico
+[14/12/2018 20:41:50] WARNING: Not Found: /favicon.ico
+[14/12/2018 20:41:52] WARNING: Not Found: /favicon.ico
+[14/12/2018 20:41:57] WARNING: Not Found: /favicon.ico
+[14/12/2018 20:41:58] WARNING: Not Found: /favicon.ico
+[14/12/2018 20:41:58] WARNING: Not Found: /favicon.ico
+[14/12/2018 20:41:58] WARNING: Not Found: /favicon.ico
+[14/12/2018 20:41:58] WARNING: Not Found: /favicon.ico
+[14/12/2018 20:41:58] WARNING: Not Found: /favicon.ico
+[14/12/2018 20:41:59] WARNING: Not Found: /favicon.ico
+[14/12/2018 20:43:27] WARNING: Not Found: /favicon.ico
+[14/12/2018 20:43:28] WARNING: Not Found: /favicon.ico
+[14/12/2018 20:43:28] WARNING: Not Found: /favicon.ico
+[14/12/2018 20:43:28] WARNING: Not Found: /favicon.ico
+[14/12/2018 20:43:28] WARNING: Not Found: /favicon.ico
+[14/12/2018 20:43:29] WARNING: Not Found: /favicon.ico
+[14/12/2018 20:43:29] WARNING: Not Found: /favicon.ico
+[14/12/2018 20:43:29] WARNING: Not Found: /favicon.ico
+[14/12/2018 20:43:36] ERROR: Internal Server Error: /app1/home/
+Traceback (most recent call last):
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/bartomeu/Documents/project1/app1/views.py", line 53, in logged
+    check_processes(user)
+  File "/home/bartomeu/Documents/project1/app1/views.py", line 123, in check_processes
+    f = open(pathInProgress+user_path + file, 'w')
+TypeError: must be str, not tuple
+[14/12/2018 20:43:36] WARNING: Not Found: /favicon.ico
+[14/12/2018 20:43:40] WARNING: Not Found: /favicon.ico
+[14/12/2018 20:43:41] WARNING: Not Found: /favicon.ico
+[14/12/2018 20:43:45] INFO: User: admin has logged in.
+[14/12/2018 20:43:45] ERROR: Internal Server Error: /app1/home/
+Traceback (most recent call last):
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/bartomeu/Documents/project1/app1/views.py", line 53, in logged
+    check_processes(user)
+  File "/home/bartomeu/Documents/project1/app1/views.py", line 123, in check_processes
+    f = open(pathInProgress+user_path + file, 'w')
+TypeError: must be str, not tuple
+[14/12/2018 20:43:45] WARNING: Not Found: /favicon.ico
+[14/12/2018 20:43:45] WARNING: Not Found: /favicon.ico
+[14/12/2018 20:44:38] ERROR: Internal Server Error: /app1/home/
+Traceback (most recent call last):
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/bartomeu/Documents/project1/app1/views.py", line 53, in logged
+    check_processes(user)
+  File "/home/bartomeu/Documents/project1/app1/views.py", line 123, in check_processes
+    f = open(pathInProgress + user_path + file, 'w')
+TypeError: must be str, not tuple
+[14/12/2018 20:44:38] WARNING: Not Found: /favicon.ico
+[14/12/2018 20:46:28] CRITICAL: There was a I/O problem updating the processes of User: admin
+[14/12/2018 20:46:28] WARNING: Not Found: /favicon.ico
+[14/12/2018 20:46:37] WARNING: Not Found: /favicon.ico
+[14/12/2018 20:46:38] WARNING: Not Found: /favicon.ico
+[14/12/2018 20:46:40] WARNING: Not Found: /favicon.ico
+[14/12/2018 20:46:44] WARNING: Not Found: /favicon.ico
+[14/12/2018 20:46:47] WARNING: Not Found: /favicon.ico
+[14/12/2018 20:46:51] WARNING: Not Found: /favicon.ico
+[14/12/2018 20:46:53] WARNING: Not Found: /favicon.ico
+[14/12/2018 20:46:55] INFO: User: admin has requested a new process [id:34, type: fibonacci
+[14/12/2018 20:46:55] WARNING: Not Found: /favicon.ico
+[14/12/2018 20:46:56] WARNING: Not Found: /favicon.ico
+[14/12/2018 21:00:31] WARNING: Not Found: /favicon.ico
+[14/12/2018 21:00:33] INFO: User: admin has requested a new process [id:35, type: fibonacci
+[14/12/2018 21:00:33] ERROR: Internal Server Error: /app1/requestProcess/
+Traceback (most recent call last):
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/template/smartif.py", line 175, in translate_token
+    op = OPERATORS[token]
+KeyError: "request.POST['back_to_main']"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/bartomeu/Documents/project1/app1/views.py", line 82, in requestprocess
+    return render(request, "app1/requestSuccessful.html", {'user': user})
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/template/backends/django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/template/engine.py", line 144, in get_template
+    template, origin = self.find_template(template_name)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/template/engine.py", line 126, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/template/loaders/base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/template/base.py", line 156, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/template/base.py", line 194, in compile_nodelist
+    return parser.parse()
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/template/base.py", line 478, in parse
+    raise self.error(token, e)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/template/base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/template/defaulttags.py", line 950, in do_if
+    condition = TemplateIfParser(parser, bits).parse()
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/template/defaulttags.py", line 883, in __init__
+    super().__init__(*args, **kwargs)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/template/smartif.py", line 166, in __init__
+    mapped_tokens.append(self.translate_token(token))
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/template/smartif.py", line 177, in translate_token
+    return self.create_var(token)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/template/defaulttags.py", line 886, in create_var
+    return TemplateLiteral(self.template_parser.compile_filter(value), value)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/template/base.py", line 563, in compile_filter
+    return FilterExpression(token, self)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/template/base.py", line 663, in __init__
+    "from '%s'" % (token[upto:], token))
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '['back_to_main']' from 'request.POST['back_to_main']'
+[14/12/2018 21:00:33] WARNING: Not Found: /favicon.ico
+[14/12/2018 21:01:41] INFO: User: admin has requested a new process [id:36, type: fibonacci
+[14/12/2018 21:01:41] ERROR: Internal Server Error: /app1/requestProcess/
+Traceback (most recent call last):
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/template/smartif.py", line 175, in translate_token
+    op = OPERATORS[token]
+KeyError: "request.POST['back_to_main']"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/bartomeu/Documents/project1/app1/views.py", line 82, in requestprocess
+    return render(request, "app1/requestSuccessful.html", {'user': user})
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/template/backends/django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/template/engine.py", line 144, in get_template
+    template, origin = self.find_template(template_name)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/template/engine.py", line 126, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/template/loaders/base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/template/base.py", line 156, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/template/base.py", line 194, in compile_nodelist
+    return parser.parse()
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/template/base.py", line 478, in parse
+    raise self.error(token, e)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/template/base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/template/defaulttags.py", line 950, in do_if
+    condition = TemplateIfParser(parser, bits).parse()
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/template/defaulttags.py", line 883, in __init__
+    super().__init__(*args, **kwargs)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/template/smartif.py", line 166, in __init__
+    mapped_tokens.append(self.translate_token(token))
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/template/smartif.py", line 177, in translate_token
+    return self.create_var(token)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/template/defaulttags.py", line 886, in create_var
+    return TemplateLiteral(self.template_parser.compile_filter(value), value)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/template/base.py", line 563, in compile_filter
+    return FilterExpression(token, self)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/template/base.py", line 663, in __init__
+    "from '%s'" % (token[upto:], token))
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '['back_to_main']' from 'request.POST['back_to_main']'
+[14/12/2018 21:01:41] WARNING: Not Found: /favicon.ico
+[14/12/2018 21:06:13] INFO: User: admin has requested a new process [id:37, type: fibonacci
+[14/12/2018 21:06:13] WARNING: Not Found: /favicon.ico
+[14/12/2018 21:06:15] WARNING: Forbidden (CSRF token missing or incorrect.): /app1/requestSuccessful/
+[14/12/2018 21:06:15] WARNING: Not Found: /favicon.ico
+[14/12/2018 21:06:21] WARNING: Not Found: /favicon.ico
+[14/12/2018 21:06:21] WARNING: Not Found: /favicon.ico
+[14/12/2018 21:06:26] INFO: User: admin has logged in.
+[14/12/2018 21:06:26] WARNING: Not Found: /favicon.ico
+[14/12/2018 21:06:26] CRITICAL: There was a I/O problem updating the processes of User: admin
+[14/12/2018 21:06:26] WARNING: Not Found: /favicon.ico
+[14/12/2018 21:06:28] WARNING: Not Found: /favicon.ico
+[14/12/2018 21:06:31] INFO: User: admin has requested a new process [id:38, type: wait
+[14/12/2018 21:06:31] WARNING: Not Found: /favicon.ico
+[14/12/2018 21:06:38] WARNING: Forbidden (CSRF token missing or incorrect.): /app1/requestSuccessful/
+[14/12/2018 21:06:38] WARNING: Not Found: /favicon.ico
+[14/12/2018 21:07:58] WARNING: Forbidden (CSRF token missing or incorrect.): /app1/requestSuccessful/
+[14/12/2018 21:07:58] WARNING: Not Found: /favicon.ico
+[14/12/2018 21:08:01] WARNING: Not Found: /favicon.ico
+[14/12/2018 21:08:01] WARNING: Not Found: /favicon.ico
+[14/12/2018 21:08:06] INFO: User: admin has logged in.
+[14/12/2018 21:08:06] CRITICAL: There was a I/O problem updating the processes of User: admin
+[14/12/2018 21:08:06] WARNING: Not Found: /favicon.ico
+[14/12/2018 21:08:06] WARNING: Not Found: /favicon.ico
+[14/12/2018 21:08:07] WARNING: Not Found: /favicon.ico
+[14/12/2018 21:08:09] INFO: User: admin has requested a new process [id:39, type: fibonacci
+[14/12/2018 21:08:09] WARNING: Not Found: /favicon.ico
+[14/12/2018 21:08:10] WARNING: Forbidden (CSRF token missing or incorrect.): /app1/requestSuccessful/
+[14/12/2018 21:08:10] WARNING: Not Found: /favicon.ico
+[14/12/2018 21:09:29] WARNING: Forbidden (CSRF token missing or incorrect.): /app1/requestSuccessful/
+[14/12/2018 21:09:29] WARNING: Not Found: /favicon.ico
+[14/12/2018 21:09:33] WARNING: Not Found: /favicon.ico
+[14/12/2018 21:09:34] WARNING: Not Found: /favicon.ico
+[14/12/2018 21:09:38] INFO: User: admin has logged in.
+[14/12/2018 21:09:38] CRITICAL: There was a I/O problem updating the processes of User: admin
+[14/12/2018 21:09:38] WARNING: Not Found: /favicon.ico
+[14/12/2018 21:09:38] WARNING: Not Found: /favicon.ico
+[14/12/2018 21:09:40] WARNING: Not Found: /favicon.ico
+[14/12/2018 21:09:42] INFO: User: admin has requested a new process [id:40, type: fibonacci
+[14/12/2018 21:09:42] WARNING: Not Found: /favicon.ico
+[14/12/2018 21:09:43] WARNING: Not Found: /favicon.ico
+[14/12/2018 21:09:44] WARNING: Not Found: /favicon.ico
+[14/12/2018 21:09:45] WARNING: Not Found: /favicon.ico
+[14/12/2018 21:11:06] CRITICAL: There was a I/O problem updating the processes of User: admin
+[14/12/2018 21:11:06] WARNING: Not Found: /favicon.ico
+[14/12/2018 22:16:00] ERROR: IO Error has occurred: Directory/File not found
+[14/12/2018 22:16:00] ERROR: IO Error has occurred: Directory/File not found
+[14/12/2018 21:16:23] WARNING: Not Found: /favicon.ico
+[14/12/2018 21:16:24] WARNING: Not Found: /favicon.ico
+[14/12/2018 21:16:33] INFO: User: admin has logged in.
+[14/12/2018 21:16:33] CRITICAL: There was a I/O problem updating the processes of User: admin
+[14/12/2018 21:16:33] WARNING: Not Found: /favicon.ico
+[14/12/2018 21:17:26] WARNING: Not Found: /favicon.ico
+[14/12/2018 21:17:30] INFO: User: admin has requested a new process [id:41, type: wait
+[14/12/2018 21:17:30] CRITICAL: There was a I/O problem updating the processes of User: admin
+[14/12/2018 21:17:30] WARNING: Not Found: /favicon.ico
+[14/12/2018 21:17:30] WARNING: Not Found: /favicon.ico

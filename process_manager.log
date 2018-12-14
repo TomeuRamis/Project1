@@ -157,3 +157,57 @@ TypeError: must be str, not int
 [13/12/2018 19:51:45] CRITICAL: There was a I/O problem updating the processes of User: admin
 [13/12/2018 19:51:45] WARNING: Not Found: /favicon.ico
 [13/12/2018 19:51:45] WARNING: Not Found: /favicon.ico
+[14/12/2018 13:15:43] WARNING: Not Found: /favicon.ico
+[14/12/2018 13:15:45] WARNING: Not Found: /favicon.ico
+[14/12/2018 13:15:54] INFO: User: admin has logged in.
+[14/12/2018 13:15:54] CRITICAL: There was a I/O problem updating the processes of User: admin
+[14/12/2018 13:15:54] WARNING: Not Found: /favicon.ico
+[14/12/2018 13:15:54] WARNING: Not Found: /favicon.ico
+[14/12/2018 13:21:40] WARNING: Not Found: /favicon.ico
+[14/12/2018 13:22:02] WARNING: Not Found: /favicon.ico
+[14/12/2018 13:23:29] WARNING: Not Found: /favicon.ico
+[14/12/2018 13:24:04] WARNING: Not Found: /favicon.ico
+[14/12/2018 13:24:50] WARNING: Not Found: /favicon.ico
+[14/12/2018 13:24:56] INFO: User: admin has logged in.
+[14/12/2018 13:24:56] CRITICAL: There was a I/O problem updating the processes of User: admin
+[14/12/2018 13:24:56] WARNING: Not Found: /favicon.ico
+[14/12/2018 13:24:56] WARNING: Not Found: /favicon.ico
+[14/12/2018 13:26:10] CRITICAL: There was a I/O problem updating the processes of User: admin
+[14/12/2018 13:26:10] ERROR: Internal Server Error: /app1/home/
+Traceback (most recent call last):
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/bartomeu/Documents/project1/app1/views.py", line 58, in logged
+    return render(request, "app1/logged.html", context)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/template/base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/template/base.py", line 904, in render_annotated
+    return self.render(context)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/template/defaulttags.py", line 209, in render
+    nodelist.append(node.render_annotated(context))
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/template/base.py", line 904, in render_annotated
+    return self.render(context)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/template/base.py", line 993, in render
+    return render_value_in_context(output, context)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/template/base.py", line 972, in render_value_in_context
+    value = str(value)
+  File "/home/bartomeu/Documents/project1/app1/models.py", line 27, in __str__
+    return '['+self.id+'] ' + str(self.type_of_process)
+TypeError: must be str, not int
+[14/12/2018 13:26:10] WARNING: Not Found: /favicon.ico
+[14/12/2018 13:26:24] CRITICAL: There was a I/O problem updating the processes of User: admin
+[14/12/2018 13:26:24] WARNING: Not Found: /favicon.ico

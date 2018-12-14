@@ -51,9 +51,10 @@ def logged(request):
 
     user = User.objects.get(user_name=request.session['username'])
     check_processes(user)
-    requests = Request.objects.filter(user=user)
     context = {'user': user,
-               'requests': requests}
+               'pending_requests': Request.objects.filter(user=user).filter(started=False),
+               'started_requests': Request.objects.filter(user=user).filter(started=True).exclude(finished=False),
+               'finished_requests': Request.objects.filter(user=user).filter(finished=True)}
     return render(request, "app1/logged.html", context)
 
 

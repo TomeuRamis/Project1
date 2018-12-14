@@ -74,8 +74,7 @@ def requestprocess(request):
                        "type": type_of_process,
                        "date of creation": str(r.date_of_creation),
                        "pid": -1,
-                       "started": False,
-                       "finished": False}, f)
+                       "status": 'P'}, f)
             f.close()
             logging.info("User: "+user.user_name+" has requested a new process"
                                                  " [id:"+str(r.id)+", type: "+type_of_process)
@@ -124,7 +123,7 @@ def check_processes(user):
                 req = json.load(f)
                 if db_req.id == req['id']:
                     logging.info("Process with id: "+str(req['id'])+" was updated to: started=True")
-                    db_req.update(started=True)
+                    db_req.update(status='S')
                 f.close()
 
         # Get the remaining database-processes that haven't started, and check if they have already finished
@@ -136,7 +135,7 @@ def check_processes(user):
                 req = json.load(f)
                 if db_req.id == req['id']:
                     logging.info("Process with id: "+ str(req['id'])+" was updated to: finished=True")
-                    db_req.update(finished=True)
+                    db_req.update(status='F')
                 f.close()
 
         # Get all processes that have been started but have not finished, and updates them
@@ -148,7 +147,7 @@ def check_processes(user):
                 req = json.load(f)
                 if db_req.id == req['id']:
                     logging.info("Process with id: "+str(req['id'])+" was updated to: finished=True")
-                    db_req.update(finished=True)
+                    db_req.update(status='F')
                 f.close()
 
     except IOError:

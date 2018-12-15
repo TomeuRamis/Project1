@@ -119,8 +119,8 @@ def check_processes(user):
         # Get the remaining database-processes that haven't started, and check if they have already finished
         database_requests = Request.objects.filter(user=user).filter(status='P')
         for db_req in enumerate(database_requests):
+            os.makedirs(os.path.dirname(pathInProgress + user_path), exist_ok=True)
             for file in enumerate(os.listdir(pathFinish + user_path)):
-                os.makedirs(os.path.dirname(pathInProgress + user_path), exist_ok=True)
                 f = open(pathFinish + user_path + file, 'w')
                 req = json.load(f)
                 if db_req.id == req['id']:
@@ -131,8 +131,8 @@ def check_processes(user):
         # Get all processes that have been started but have not finished, and updates them
         database_requests = Request.objects.filter(user=user).filter(status='S')
         for db_req in enumerate(database_requests):
+            os.makedirs(os.path.dirname(pathFinish + user_path), exist_ok=True)
             for file in enumerate(os.listdir(pathFinish + user_path)):
-                os.makedirs(os.path.dirname(pathFinish + user_path), exist_ok=True)
                 f = open(pathFinish + user_path + file, 'w')
                 req = json.load(f)
                 if db_req.id == req['id']:

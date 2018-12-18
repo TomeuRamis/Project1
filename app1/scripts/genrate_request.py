@@ -1,5 +1,5 @@
 
 def run():
-    f = open("Hola", "w")
-    f.write("adeu\n")
+    f = open("Hello", "w")
+    f.write("Bye \n")
     f.close()

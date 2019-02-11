@@ -92,3 +92,485 @@
 [11/01/2019 20:10:03] WARNING: Not Found: /
 [11/01/2019 20:31:14] WARNING: Not Found: /ADMIN
 [11/01/2019 20:31:28] WARNING: Not Found: /favicon.ico
+[11/02/2019 17:42:17] WARNING: Not Found: /favicon.ico
+[11/02/2019 17:43:25] WARNING: Not Found: /app1/login/login.css
+[11/02/2019 17:45:00] WARNING: Forbidden (CSRF token missing or incorrect.): /app1/login/
+[11/02/2019 17:45:19] WARNING: Not Found: /app1/login/login.css
+[11/02/2019 17:45:24] WARNING: Not Found: /app1/login/login.css
+[11/02/2019 17:45:44] WARNING: Not Found: /app1/login/login.css
+[11/02/2019 17:46:17] WARNING: Not Found: /app1/login/login.css
+[11/02/2019 17:50:49] WARNING: Forbidden (CSRF token missing or incorrect.): /app1/login/
+[11/02/2019 17:51:05] WARNING: Forbidden (CSRF token missing or incorrect.): /app1/login/
+[11/02/2019 17:51:41] WARNING: Forbidden (CSRF token missing or incorrect.): /app1/login/
+[11/02/2019 17:52:46] ERROR: Internal Server Error: /app1/login/
+Traceback (most recent call last):
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/utils/datastructures.py", line 77, in __getitem__
+    list_ = super().__getitem__(key)
+KeyError: 'username'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/bartomeu/Documents/project1/app1/views.py", line 29, in login
+    user = User.objects.get(user_name=request.POST['username'])
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/utils/datastructures.py", line 79, in __getitem__
+    raise MultiValueDictKeyError(key)
+django.utils.datastructures.MultiValueDictKeyError: 'username'
+[11/02/2019 17:54:07] ERROR: Internal Server Error: /app1/login/
+Traceback (most recent call last):
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/utils/datastructures.py", line 77, in __getitem__
+    list_ = super().__getitem__(key)
+KeyError: 'inputName'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/bartomeu/Documents/project1/app1/views.py", line 29, in login
+    user = User.objects.get(user_name=request.POST['inputName'])
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/utils/datastructures.py", line 79, in __getitem__
+    raise MultiValueDictKeyError(key)
+django.utils.datastructures.MultiValueDictKeyError: 'inputName'
+[11/02/2019 17:56:01] ERROR: Internal Server Error: /app1/login/
+Traceback (most recent call last):
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/utils/datastructures.py", line 77, in __getitem__
+    list_ = super().__getitem__(key)
+KeyError: 'username'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/bartomeu/Documents/project1/app1/views.py", line 29, in login
+    user = User.objects.get(user_name=request.POST['username'])
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/utils/datastructures.py", line 79, in __getitem__
+    raise MultiValueDictKeyError(key)
+django.utils.datastructures.MultiValueDictKeyError: 'username'
+[11/02/2019 17:56:12] INFO: User: admin has logged in.
+[11/02/2019 17:56:30] ERROR: There was an attempt to log in with the wrong credentials user name: brt, email: admin@gmail.com
+[11/02/2019 17:57:14] INFO: User: admin has logged in.
+[11/02/2019 17:57:31] ERROR: There was an attempt to log in with the wrong credentials user name: brt536, email: tomeuramis99@yahoo.es
+[11/02/2019 18:09:42] ERROR: There was an attempt to log in with the wrong credentials user name: brt536, email: tomeuramis99@yahoo.es
+[11/02/2019 18:09:55] ERROR: There was an attempt to log in with the wrong credentials user name: brt536, email: tomeuramis99@yahoo.es
+[11/02/2019 18:10:00] ERROR: There was an attempt to log in with the wrong credentials user name: brt536, email: tomeuramis99@yahoo.es
+[11/02/2019 18:10:38] ERROR: There was an attempt to log in with the wrong credentials user name: brt536, email: tomeuramis99@yahoo.es
+[11/02/2019 18:10:48] ERROR: There was an attempt to log in with the wrong credentials user name: brt536, email: tomeuramis99@yahoo.es
+[11/02/2019 18:10:55] ERROR: There was an attempt to log in with the wrong credentials user name: brt536, email: tomeuramis99@yahoo.es
+[11/02/2019 18:11:18] ERROR: There was an attempt to log in with the wrong credentials user name: brt536, email: tomeuramis99@yahoo.es
+[11/02/2019 18:11:51] ERROR: There was an attempt to log in with the wrong credentials user name: brt536, email: tomeuramis99@yahoo.es
+[11/02/2019 18:12:27] INFO: User: admin has logged in.
+[11/02/2019 18:12:49] INFO: User: admin has logged in.
+[11/02/2019 18:12:58] INFO: User: admin has logged in.
+[11/02/2019 18:13:43] INFO: User: admin has logged in.
+[11/02/2019 18:19:11] INFO: User: admin has logged in.
+[11/02/2019 18:19:11] WARNING: Not Found: /app1/login/dashboard.css
+[11/02/2019 18:19:11] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 18:19:11] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 18:19:11] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 18:19:11] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 18:22:33] INFO: User: admin has logged in.
+[11/02/2019 18:22:33] WARNING: Not Found: /app1/login/home.css
+[11/02/2019 18:22:33] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 18:22:33] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 18:22:33] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 18:22:33] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 18:26:28] INFO: User: admin has logged in.
+[11/02/2019 18:26:28] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 18:26:28] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 18:26:29] WARNING: Not Found: /app1/login/home.css
+[11/02/2019 18:26:29] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 18:26:29] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 18:27:27] INFO: User: admin has logged in.
+[11/02/2019 18:27:27] WARNING: Not Found: /app1/login/home.css
+[11/02/2019 18:27:27] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 18:27:27] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 18:27:27] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 18:27:27] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 18:27:56] INFO: User: admin has logged in.
+[11/02/2019 18:27:56] WARNING: Not Found: /app1/login/home.css
+[11/02/2019 18:27:56] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 18:27:56] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 18:27:56] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 18:27:56] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 18:28:51] INFO: User: admin has logged in.
+[11/02/2019 18:28:51] WARNING: Not Found: /app1/login/home.css
+[11/02/2019 18:28:51] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 18:28:51] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 18:28:51] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 18:28:51] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 18:32:47] INFO: User: admin has logged in.
+[11/02/2019 18:32:47] WARNING: Not Found: /app1/login/home.css
+[11/02/2019 18:32:47] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 18:32:47] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 18:32:47] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 18:32:47] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 18:33:16] INFO: User: admin has logged in.
+[11/02/2019 18:33:16] WARNING: Not Found: /app1/login/home.css
+[11/02/2019 18:33:16] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 18:33:16] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 18:33:16] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 18:33:16] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 18:38:41] INFO: User: admin has logged in.
+[11/02/2019 18:38:42] WARNING: Not Found: /app1/login/home.css
+[11/02/2019 18:38:42] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 18:38:42] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 18:38:42] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 18:38:42] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 18:38:53] WARNING: Not Found: /
+[11/02/2019 18:39:46] WARNING: Forbidden (CSRF token missing or incorrect.): /app1/login/
+[11/02/2019 18:39:55] INFO: User: admin has logged in.
+[11/02/2019 18:39:56] WARNING: Not Found: /app1/login/home.css
+[11/02/2019 18:39:56] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 18:39:56] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 18:39:56] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 18:39:56] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 18:42:59] INFO: User: admin has logged in.
+[11/02/2019 18:42:59] WARNING: Not Found: /app1/login/home.css
+[11/02/2019 18:42:59] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 18:42:59] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 18:42:59] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 18:42:59] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 18:43:24] INFO: User: admin has logged in.
+[11/02/2019 18:43:24] WARNING: Not Found: /app1/login/home.css
+[11/02/2019 18:43:24] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 18:43:24] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 18:43:25] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 18:43:25] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 18:45:14] INFO: User: admin has logged in.
+[11/02/2019 18:45:14] WARNING: Not Found: /app1/login/home.css
+[11/02/2019 18:45:14] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 18:45:14] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 18:45:14] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 18:45:14] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 18:45:48] INFO: User: admin has logged in.
+[11/02/2019 18:45:49] WARNING: Not Found: /app1/login/home.css
+[11/02/2019 18:45:49] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 18:45:49] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 18:45:49] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 18:45:49] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 18:46:45] INFO: User: admin has logged in.
+[11/02/2019 18:46:45] WARNING: Not Found: /app1/login/home.css
+[11/02/2019 18:46:45] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 18:46:45] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 18:46:45] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 18:46:45] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 18:46:57] INFO: User: admin has logged in.
+[11/02/2019 18:46:57] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 18:46:58] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 18:46:58] WARNING: Not Found: /app1/login/home.css
+[11/02/2019 18:46:58] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 18:46:58] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 18:48:35] INFO: User: admin has logged in.
+[11/02/2019 18:48:35] WARNING: Not Found: /app1/login/home.css
+[11/02/2019 18:48:35] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 18:48:35] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 18:48:35] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 18:48:35] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 18:48:42] INFO: User: admin has logged in.
+[11/02/2019 18:48:42] WARNING: Not Found: /app1/login/home.css
+[11/02/2019 18:48:42] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 18:48:42] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 18:48:43] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 18:48:43] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 18:49:04] INFO: User: admin has logged in.
+[11/02/2019 18:49:04] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 18:49:04] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 18:49:04] WARNING: Not Found: /app1/login/home.css
+[11/02/2019 18:49:04] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 18:49:04] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 18:49:17] INFO: User: admin has logged in.
+[11/02/2019 18:49:17] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 18:49:17] WARNING: Not Found: /app1/login/home.css
+[11/02/2019 18:49:17] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 18:49:17] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 18:49:17] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 18:49:30] INFO: User: admin has logged in.
+[11/02/2019 18:49:30] WARNING: Not Found: /app1/login/home.css
+[11/02/2019 18:49:30] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 18:49:30] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 18:49:30] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 18:49:30] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 18:49:46] INFO: User: admin has logged in.
+[11/02/2019 18:49:46] WARNING: Not Found: /app1/login/home.css
+[11/02/2019 18:49:46] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 18:49:46] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 18:49:46] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 18:49:46] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 18:49:56] INFO: User: admin has logged in.
+[11/02/2019 18:49:56] WARNING: Not Found: /app1/login/home.css
+[11/02/2019 18:49:56] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 18:49:56] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 18:49:57] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 18:49:57] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 18:51:25] INFO: User: admin has logged in.
+[11/02/2019 18:51:25] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 18:51:25] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 18:51:25] WARNING: Not Found: /app1/login/home.css
+[11/02/2019 18:51:25] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 18:51:25] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 18:52:21] INFO: User: admin has logged in.
+[11/02/2019 18:52:22] WARNING: Not Found: /app1/login/home.css
+[11/02/2019 18:52:22] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 18:52:22] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 18:52:22] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 18:52:22] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 18:52:37] INFO: User: admin has logged in.
+[11/02/2019 18:52:38] WARNING: Not Found: /app1/login/home.css
+[11/02/2019 18:52:38] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 18:52:38] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 18:52:38] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 18:52:38] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 18:53:08] INFO: User: admin has logged in.
+[11/02/2019 18:53:09] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 18:53:09] WARNING: Not Found: /app1/login/home.css
+[11/02/2019 18:53:09] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 18:53:09] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 18:53:09] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 18:53:57] INFO: User: admin has logged in.
+[11/02/2019 18:53:58] WARNING: Not Found: /app1/login/home.css
+[11/02/2019 18:53:58] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 18:53:58] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 18:53:58] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 18:53:58] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 18:56:57] INFO: User: admin has logged in.
+[11/02/2019 18:56:57] WARNING: Not Found: /app1/login/home.css
+[11/02/2019 18:56:57] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 18:56:57] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 18:56:57] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 18:56:57] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 18:57:27] INFO: User: admin has logged in.
+[11/02/2019 18:57:28] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 18:57:28] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 18:57:28] WARNING: Not Found: /app1/login/home.css
+[11/02/2019 18:57:28] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 18:57:28] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 18:57:41] INFO: User: admin has logged in.
+[11/02/2019 18:57:41] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 18:57:41] WARNING: Not Found: /app1/login/home.css
+[11/02/2019 18:57:41] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 18:57:42] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 18:57:42] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 18:58:52] INFO: User: admin has logged in.
+[11/02/2019 18:58:52] WARNING: Not Found: /app1/login/home.css
+[11/02/2019 18:58:52] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 18:58:52] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 18:58:53] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 18:58:53] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 18:59:06] INFO: User: admin has logged in.
+[11/02/2019 18:59:07] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 18:59:07] WARNING: Not Found: /app1/login/home.css
+[11/02/2019 18:59:07] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 18:59:07] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 18:59:07] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 18:59:39] INFO: User: admin has logged in.
+[11/02/2019 18:59:39] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 18:59:39] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 18:59:39] WARNING: Not Found: /app1/login/home.css
+[11/02/2019 18:59:39] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 18:59:39] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 18:59:48] INFO: User: admin has logged in.
+[11/02/2019 18:59:48] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 18:59:48] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 18:59:48] WARNING: Not Found: /app1/login/home.css
+[11/02/2019 18:59:48] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 18:59:48] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 19:00:05] INFO: User: admin has logged in.
+[11/02/2019 19:00:05] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 19:00:05] WARNING: Not Found: /app1/login/home.css
+[11/02/2019 19:00:05] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 19:00:05] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 19:00:05] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 19:00:24] INFO: User: admin has logged in.
+[11/02/2019 19:00:24] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 19:00:24] WARNING: Not Found: /app1/login/home.css
+[11/02/2019 19:00:24] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 19:00:24] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 19:00:24] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 19:00:40] INFO: User: admin has logged in.
+[11/02/2019 19:00:40] WARNING: Not Found: /app1/login/home.css
+[11/02/2019 19:00:40] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 19:00:40] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 19:00:40] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 19:00:40] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 19:01:44] INFO: User: admin has logged in.
+[11/02/2019 19:01:44] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 19:01:44] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 19:01:44] WARNING: Not Found: /app1/login/home.css
+[11/02/2019 19:01:45] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 19:01:45] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 19:02:18] INFO: User: admin has logged in.
+[11/02/2019 19:02:18] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 19:02:18] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 19:02:18] WARNING: Not Found: /app1/login/home.css
+[11/02/2019 19:02:19] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 19:02:19] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 19:02:19] WARNING: Not Found: /favicon.ico
+[11/02/2019 19:02:35] INFO: User: admin has logged in.
+[11/02/2019 19:02:35] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 19:02:35] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 19:02:35] WARNING: Not Found: /app1/login/home.css
+[11/02/2019 19:02:35] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 19:02:35] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 19:02:35] WARNING: Not Found: /favicon.ico
+[11/02/2019 19:03:31] INFO: User: admin has logged in.
+[11/02/2019 19:03:31] WARNING: Not Found: /app1/login/home.css
+[11/02/2019 19:03:31] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 19:03:31] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 19:03:31] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 19:03:31] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 19:03:43] INFO: User: admin has logged in.
+[11/02/2019 19:03:43] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 19:03:43] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 19:03:43] WARNING: Not Found: /app1/login/home.css
+[11/02/2019 19:03:44] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 19:03:44] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 19:03:44] WARNING: Not Found: /favicon.ico
+[11/02/2019 19:05:05] INFO: User: admin has logged in.
+[11/02/2019 19:05:05] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 19:05:05] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 19:05:05] WARNING: Not Found: /app1/login/home.css
+[11/02/2019 19:05:05] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 19:05:05] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 19:05:05] WARNING: Not Found: /favicon.ico
+[11/02/2019 19:05:45] INFO: User: admin has logged in.
+[11/02/2019 19:05:45] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 19:05:45] WARNING: Not Found: /app1/login/home.css
+[11/02/2019 19:05:45] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 19:05:45] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 19:05:45] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 19:05:45] WARNING: Not Found: /favicon.ico
+[11/02/2019 19:05:57] INFO: User: admin has logged in.
+[11/02/2019 19:05:58] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 19:05:58] WARNING: Not Found: /app1/login/home.css
+[11/02/2019 19:05:58] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 19:05:58] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 19:05:58] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 19:05:58] WARNING: Not Found: /favicon.ico
+[11/02/2019 19:06:16] WARNING: Not Found: /favicon.ico
+[11/02/2019 19:06:23] INFO: User: admin has logged in.
+[11/02/2019 19:06:24] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 19:06:24] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 19:06:24] WARNING: Not Found: /app1/login/home.css
+[11/02/2019 19:06:24] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 19:06:24] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 19:06:24] WARNING: Not Found: /favicon.ico
+[11/02/2019 19:07:40] INFO: User: admin has logged in.
+[11/02/2019 19:07:40] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 19:07:40] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 19:07:40] WARNING: Not Found: /app1/login/home.css
+[11/02/2019 19:07:40] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 19:07:40] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 19:07:40] WARNING: Not Found: /favicon.ico
+[11/02/2019 19:07:58] INFO: User: admin has logged in.
+[11/02/2019 19:07:58] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 19:07:58] WARNING: Not Found: /app1/login/home.css
+[11/02/2019 19:07:58] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 19:07:58] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 19:07:59] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 19:07:59] WARNING: Not Found: /favicon.ico
+[11/02/2019 19:10:49] INFO: User: admin has logged in.
+[11/02/2019 19:10:50] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 19:10:50] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 19:10:50] WARNING: Not Found: /app1/login/home.css
+[11/02/2019 19:10:50] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 19:10:50] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 19:10:50] WARNING: Not Found: /favicon.ico
+[11/02/2019 19:11:20] INFO: User: admin has logged in.
+[11/02/2019 19:11:20] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 19:11:20] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 19:11:20] WARNING: Not Found: /app1/login/home.css
+[11/02/2019 19:11:21] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 19:11:21] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 19:11:21] WARNING: Not Found: /favicon.ico
+[11/02/2019 19:12:05] INFO: User: admin has logged in.
+[11/02/2019 19:12:05] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 19:12:05] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 19:12:05] WARNING: Not Found: /app1/login/home.css
+[11/02/2019 19:12:05] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 19:12:05] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 19:12:05] WARNING: Not Found: /favicon.ico
+[11/02/2019 19:13:37] INFO: User: admin has logged in.
+[11/02/2019 19:13:37] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 19:13:37] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 19:13:37] WARNING: Not Found: /app1/login/home.css
+[11/02/2019 19:13:37] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 19:13:37] WARNING: Not Found: /app1/login/dashboard.js
+[11/02/2019 19:13:38] WARNING: Not Found: /favicon.ico
+[11/02/2019 19:15:11] INFO: User: admin has requested a new process id:48, type: fibonacci
+[11/02/2019 19:15:13] WARNING: Not Found: /app1/home/home.css
+[11/02/2019 19:15:13] WARNING: Not Found: /app1/home/dashboard.js
+[11/02/2019 19:15:13] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 19:15:13] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 19:15:13] WARNING: Not Found: /app1/home/dashboard.js
+[11/02/2019 19:15:45] WARNING: Not Found: /app1/home/home.css
+[11/02/2019 19:15:45] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 19:15:45] WARNING: Not Found: /app1/home/dashboard.js
+[11/02/2019 19:15:45] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 19:15:45] WARNING: Not Found: /app1/home/dashboard.js
+[11/02/2019 19:16:13] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 19:16:13] WARNING: Not Found: /app1/home/dashboard.js
+[11/02/2019 19:16:13] WARNING: Not Found: /app1/home/home.css
+[11/02/2019 19:16:13] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 19:16:13] WARNING: Not Found: /app1/home/dashboard.js
+[11/02/2019 19:16:13] WARNING: Not Found: /favicon.ico
+[11/02/2019 19:16:59] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 19:16:59] WARNING: Not Found: /app1/home/dashboard.js
+[11/02/2019 19:16:59] WARNING: Not Found: /app1/home/home.css
+[11/02/2019 19:16:59] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 19:16:59] WARNING: Not Found: /app1/home/dashboard.js
+[11/02/2019 19:16:59] WARNING: Not Found: /favicon.ico
+[11/02/2019 19:17:26] WARNING: Not Found: /app1/home/dashboard.js
+[11/02/2019 19:17:26] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 19:17:26] WARNING: Not Found: /app1/home/home.css
+[11/02/2019 19:17:27] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 19:17:27] WARNING: Not Found: /app1/home/dashboard.js
+[11/02/2019 19:17:27] WARNING: Not Found: /favicon.ico
+[11/02/2019 19:17:35] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 19:17:35] WARNING: Not Found: /app1/home/dashboard.js
+[11/02/2019 19:17:35] WARNING: Not Found: /app1/home/home.css
+[11/02/2019 19:17:35] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 19:17:35] WARNING: Not Found: /app1/home/dashboard.js
+[11/02/2019 19:17:35] WARNING: Not Found: /favicon.ico
+[11/02/2019 19:17:44] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 19:17:44] WARNING: Not Found: /app1/home/dashboard.js
+[11/02/2019 19:17:44] WARNING: Not Found: /app1/home/home.css
+[11/02/2019 19:17:44] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 19:17:44] WARNING: Not Found: /app1/home/dashboard.js
+[11/02/2019 19:17:45] WARNING: Not Found: /favicon.ico
+[11/02/2019 19:18:31] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 19:18:31] WARNING: Not Found: /app1/home/dashboard.js
+[11/02/2019 19:18:31] WARNING: Not Found: /app1/home/home.css
+[11/02/2019 19:18:31] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 19:18:31] WARNING: Not Found: /app1/home/dashboard.js
+[11/02/2019 19:18:31] WARNING: Not Found: /favicon.ico
+[11/02/2019 19:23:01] WARNING: Not Found: /docs/4.2/dist/css/bootstrap.min.css
+[11/02/2019 19:23:01] WARNING: Not Found: /app1/cover.css
+[11/02/2019 19:23:33] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 19:23:33] WARNING: Not Found: /app1/home/dashboard.js
+[11/02/2019 19:23:33] WARNING: Not Found: /app1/home/home.css
+[11/02/2019 19:23:34] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[11/02/2019 19:23:34] WARNING: Not Found: /app1/home/dashboard.js
+[11/02/2019 19:23:34] WARNING: Not Found: /favicon.ico
+[11/02/2019 19:25:52] WARNING: Not Found: /app1/index.css
+[11/02/2019 19:25:53] WARNING: Not Found: /app1/index.css
+[11/02/2019 19:25:53] WARNING: Not Found: /app1/index.css
+[11/02/2019 19:25:53] WARNING: Not Found: /app1/index.css
+[11/02/2019 19:25:54] WARNING: Not Found: /app1/index.css
+[11/02/2019 19:25:54] WARNING: Not Found: /app1/index.css
+[11/02/2019 19:28:50] WARNING: Not Found: /app1/login.html

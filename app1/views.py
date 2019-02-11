@@ -33,15 +33,15 @@ def login(request):
                 context = {'user': user,
                            'access': True}
                 logging.info('User: ' + user.user_name + ' has logged in.')
-                return render(request, "app1/login.html", context)
+                return render(request, "app1/home.html", context)
             else:
                 logging.error('User: ' + user.user_name + ' has tried to log in with'
                                                           ' a wrong email ( ' + request.POST['email'] + ' ).')
-                return render(request, "app1/loginFailed.html")
+                return render(request, "app1/login.html")
         except User.DoesNotExist:
             logging.error('There was an attempt to log in with the wrong credentials '
                           'user name: ' + request.POST['username'] + ', email: ' + request.POST['email'])
-            return render(request, "app1/loginFailed.html")
+            return render(request, "app1/login.html")
     else:
         return render(request, "app1/login.html")
 
@@ -55,7 +55,7 @@ def logged(request):
                'pending_requests': Request.objects.filter(user=user).filter(status='P'),
                'started_requests': Request.objects.filter(user=user).filter(status='S'),
                'finished_requests': Request.objects.filter(user=user).filter(status='F')}
-    return render(request, "app1/logged.html", context)
+    return render(request, "app1/home.html", context)
 
 
 def request_process(request):

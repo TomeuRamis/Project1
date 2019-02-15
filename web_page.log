@@ -574,3 +574,9 @@ django.utils.datastructures.MultiValueDictKeyError: 'username'
 [11/02/2019 19:25:54] WARNING: Not Found: /app1/index.css
 [11/02/2019 19:25:54] WARNING: Not Found: /app1/index.css
 [11/02/2019 19:28:50] WARNING: Not Found: /app1/login.html
+[15/02/2019 09:16:48] ERROR: There was an attempt to log in with the wrong credentials user name: a, email: a@u
+[15/02/2019 09:28:36] ERROR: There was an attempt to log in with the wrong credentials user name: a, email: a@u
+[15/02/2019 09:29:01] ERROR: There was an attempt to log in with the wrong credentials user name: a, email: a@u
+[15/02/2019 09:29:41] WARNING: Not Found: /app1/index
+[15/02/2019 09:30:22] ERROR: There was an attempt to log in with the wrong credentials user name: a, email: b@a
+[15/02/2019 09:31:04] ERROR: There was an attempt to log in with the wrong credentials user name: a, email: b@a

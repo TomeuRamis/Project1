@@ -60,6 +60,15 @@
             border-top-right-radius: 0px;
         }
 
+        .login-error{
+          background-color: rgba(255, 26, 76, 0.36);
+          text-align: center;
+          min-width: fit-content;
+          max-width: content-box;
+          max-height: 30px;
+          border-radius: 10px;
+          margin-bottom: 10px;}
+
     </style>
 
 </head>
@@ -69,6 +78,11 @@
 <form class="form-signin" method="post" action="{% url 'app1:login' %}"> {% csrf_token %}
     <img class="mb-4" src="" alt="" width="72" height="72">
     <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+    {% if access != True and access != None %}
+        <div class="login-error">
+              Incorrect user-name or e-mail
+        </div>
+    {% endif %}
     <label for="input" class="sr-only">User's name</label>
     <input type="name" name="username" id="inputName" class="form-control" placeholder="Username" required autofocus>
     <label for="inputEmail" class="sr-only">E-mail</label>

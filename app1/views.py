@@ -25,23 +25,26 @@ def index(request):
 
 def login(request):
     if request.method == 'POST':
+        context = {'user': None,
+                   'access': True}
         try:
             user = User.objects.get(user_name=request.POST['username'])
             if user == User.objects.get(email=request.POST['email']):
                 request.session['username'] = user.user_name
                 request.session['email'] = user.email
-                context = {'user': user,
-                           'access': True}
+                context['user'] = user
                 logging.info('User: ' + user.user_name + ' has logged in.')
                 return render(request, "app1/home.html", context)
             else:
                 logging.error('User: ' + user.user_name + ' has tried to log in with'
                                                           ' a wrong email ( ' + request.POST['email'] + ' ).')
-                return render(request, "app1/login.html")
+                context['access'] = False   # Deny access to the web-page
+                return render(request, "app1/login.html", context)
         except User.DoesNotExist:
             logging.error('There was an attempt to log in with the wrong credentials '
                           'user name: ' + request.POST['username'] + ', email: ' + request.POST['email'])
-            return render(request, "app1/login.html")
+            context['access'] = False       # Deny access to the web-page
+            return render(request, "app1/login.html", context)
     else:
         return render(request, "app1/login.html")
 

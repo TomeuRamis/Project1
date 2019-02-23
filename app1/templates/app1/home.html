@@ -1,14 +1,15 @@
 <!doctype html>
 <html lang="en">
-  <head>
+<head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+          integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 
-    <title>Hello, {{user}} !</title>
+    <title>Hello, {{ user }} !</title>
 
     <style>
         body {
@@ -21,115 +22,100 @@
             vertical-align: text-bottom;
         }
 
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-      }
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
         }
-      }
 
-      .table-responsive{
-        padding-bottom: 10px;
-      }
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
 
-      .table-name{
+        .table-responsive {
+            padding-bottom: 10px;
+        }
+
+        .table-name {
             padding-top: 10px;
             padding-left: 10px;
-      }
+        }
 
-      .activity-message{
-          background-color: rgba(39, 255, 47, 0.36);
-          text-align: center;
-          min-width: fit-content;
-          max-width: content-box;
-          max-height: 30px;
-          border-radius: 10px;
-          margin-bottom: 30px;
-      }
-      .request-error{
-          background-color: rgba(255, 26, 76, 0.36);
-          text-align: center;
-          min-width: fit-content;
-          max-width: content-box;
-          max-height: 30px;
-          border-radius: 10px;
-          margin-bottom: 10px;
-      }
-
-          .request-form{
-              background-color: rgba(0, 123, 255, 0.2);
-              text-align: left;
-              margin: 0px;
-              border-radius: 10px;
-          }
+        .activity-message {
+            background-color: rgba(39, 255, 47, 0.36);
+            text-align: center;
+            min-width: fit-content;
+            max-width: content-box;
+            max-height: 30px;
+            border-radius: 10px;
+            padding: 5px;
+            margin-bottom: 30px;
+        }
 
 
-    /*
-     * Sidebar
-     */
+        /*
+         * Sidebar
+         */
 
-    .sidebar {
-      position: fixed;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      z-index: 100; /* Behind the navbar */
-      box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
-    }
+        .sidebar {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 100; /* Behind the navbar */
+            box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+        }
 
-    .sidebar-sticky {
-      position: relative;
-      top: 0;
-      height: calc(100vh - 48px);
-      padding-top: .5rem;
-      overflow-x: hidden;
-      overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
-    }
+        .sidebar-sticky {
+            position: relative;
+            top: 0;
+            height: calc(100vh - 48px);
+            padding-top: .5rem;
+            overflow-x: hidden;
+            overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+        }
 
-    @supports ((position: -webkit-sticky) or (position: sticky)) {
-      .sidebar-sticky {
-        position: -webkit-sticky;
-        position: sticky;
-      }
-    }
+        @supports ((position: -webkit-sticky) or (position: sticky)) {
+            .sidebar-sticky {
+                position: -webkit-sticky;
+                position: sticky;
+            }
+        }
 
-    .sidebar .nav-link {
-      font-weight: 500;
-      color: #333;
-    }
+        .sidebar .nav-link {
+            font-weight: 500;
+            color: #333;
+        }
 
-    .sidebar .nav-link .feather {
-      margin-right: 4px;
-      color: #999;
-    }
+        .sidebar .nav-link .feather {
+            margin-right: 4px;
+            color: #5798f5;
+        }
 
-    .sidebar .nav-link.active {
-      color: #007bff;
-    }
+        .sidebar .nav-link.active {
+            color: #007bff;
+        }
 
-    .sidebar .nav-link:hover .feather,
-    .sidebar .nav-link.active .feather {
-      color: inherit;
-    }
+        .sidebar .nav-link:hover .feather,
+        .sidebar .nav-link.active .feather {
+            color: inherit;
+        }
 
-    .sidebar-heading {
-      font-size: .75rem;
-      text-transform: uppercase;
-    }
+        .sidebar-heading {
+            font-size: .75rem;
+            text-transform: uppercase;
+        }
 
 
     </style>
     <!-- Custom styles for this template -->
     <link href="home.css" rel="stylesheet">
-  </head>
-  <body>
+</head>
+<body>
 
 
-  <!--
+<!--
   <strong> Welcome to app1 from project1 {{user}} </strong>
 <h4> -- Account information --</h4>
 Your username: {{ user }}<br>
@@ -158,184 +144,171 @@ Your e-mail:   {{ user.email }}<br>
 -->
 
 <div class="container-fluid">
-  <div class="row">
-    <nav class="col-md-2 d-none d-md-block bg-light sidebar">
-      <div class="sidebar-sticky">
-          <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-          <span>Menu</span>
-          <a class="d-flex align-items-center text-muted" href="#">
-            <span data-feather="plus-circle"></span>
-          </a>
-        </h6>
-        <ul class="nav flex-column">
+    <div class="row">
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+            <div class="sidebar-sticky">
+                <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                    <span>Menu</span>
+                    <a class="d-flex align-items-center text-muted" href="#">
+                        <span data-feather="plus-circle"></span>
+                    </a>
+                </h6>
+                <ul class="nav flex-column">
 
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'app1:requestProcess' %}">
-              <span data-feather="file"></span>
-              Request new process
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <span data-feather="shopping-cart"></span>
-              Cancel process (not implemented)
-            </a>
-          </li>
-        </ul>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'app1:requestProcess' %}">
+                            <span data-feather="file"></span>
+                            Request new process
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <span data-feather="shopping-cart"></span>
+                            Cancel process (not implemented)
+                        </a>
+                    </li>
+                </ul>
 
-        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-          <span>About us (not implemented)</span>
-          <a class="d-flex align-items-center text-muted" href="#">
-            <span data-feather="plus-circle"></span>
-          </a>
-        </h6>
-        <ul class="nav flex-column mb-2">
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <span data-feather="file-text"></span>
-              Our work
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <span data-feather="file-text"></span>
-              FAQS
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <span data-feather="file-text"></span>
-              Where to fund us
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <span data-feather="file-text"></span>
-              Report a problem
-            </a>
-          </li>
-        </ul>
-      </div>
-    </nav>
+                <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                    <span>About us (not implemented)</span>
+                    <a class="d-flex align-items-center text-muted" href="#">
+                        <span data-feather="plus-circle"></span>
+                    </a>
+                </h6>
+                <ul class="nav flex-column mb-2">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <span data-feather="file-text"></span>
+                            Our work
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <span data-feather="file-text"></span>
+                            FAQS
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <span data-feather="file-text"></span>
+                            Where to fund us
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <span data-feather="file-text"></span>
+                            Report a problem
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
 
-    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">Activity</h1>
-          News, recent finished projects and more will be shown here
-      </div>
-        <div class="activity-message">
-              Nothing to show here
-        </div>
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                <h1 class="h2">Activity</h1>
+                News, recent finished projects and more will be shown here
+            </div>
+            <div class="activity-message">
+                Nothing to show here
+            </div>
 
 
-      <h2>My processes</h2>
+            <h2>My processes</h2>
 
-        <h4 class="table-name"> Pending processes</h4>
-      <div class="table-responsive">
-        <table class="table table-striped table-sm">
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Type</th>
-              <th>Date of creation</th>
-              <th>PID</th>
-              <th>Status</th>
-            </tr>
-          </thead>
-          <tbody>
-            {% for request in pending_requests %}
-                <tr>
-                  <td> {{ request.id }}</td>
-                  <td> {{ request.type_of_process }}</td>
-                  <td> {{ request.date_of_creation }}</td>
-                  <td> {{ request.pid }}</td>
-                  <td> {{ request.status }}</td>
-                </tr>
-            {% endfor %}
+            <h4 class="table-name"> Pending processes</h4>
+            <div class="table-responsive">
+                <table class="table table-striped table-sm">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Type</th>
+                        <th>Date of creation</th>
+                        <th>PID</th>
+                        <th>Status</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for request in pending_requests %}
+                        <tr>
+                            <td> {{ request.id }}</td>
+                            <td> {{ request.type_of_process }}</td>
+                            <td> {{ request.date_of_creation }}</td>
+                            <td> {{ request.pid }}</td>
+                            <td> {{ request.status }}</td>
+                        </tr>
+                    {% endfor %}
 
-          </tbody>
-        </table>
-      </div>
+                    </tbody>
+                </table>
+            </div>
 
-    <h4 class="table-name">Processes in progress</h4>
-    <div class="table-responsive">
-        <table class="table table-striped table-sm">
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Type</th>
-              <th>Date of creation</th>
-              <th>PID</th>
-              <th>Status</th>
-            </tr>
-          </thead>
-          <tbody>
-            {% for request in started_requests %}
-                <tr>
-                  <td> {{ request.id }}</td>
-                  <td> {{ request.type_of_process }}</td>
-                  <td> {{ request.date_of_creation }}</td>
-                  <td> {{ request.pid }}</td>
-                  <td> {{ request.status }}</td>
-                </tr>
-            {% endfor %}
+            <h4 class="table-name">Processes in progress</h4>
+            <div class="table-responsive">
+                <table class="table table-striped table-sm">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Type</th>
+                        <th>Date of creation</th>
+                        <th>PID</th>
+                        <th>Status</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for request in started_requests %}
+                        <tr>
+                            <td> {{ request.id }}</td>
+                            <td> {{ request.type_of_process }}</td>
+                            <td> {{ request.date_of_creation }}</td>
+                            <td> {{ request.pid }}</td>
+                            <td> {{ request.status }}</td>
+                        </tr>
+                    {% endfor %}
 
-          </tbody>
-        </table>
-      </div>
+                    </tbody>
+                </table>
+            </div>
 
-    <h4 class="table-name">Finished processes</h4>
-    <div class="table-responsive">
-        <table class="table table-striped table-sm">
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Type</th>
-              <th>Date of creation</th>
-              <th>PID</th>
-              <th>Status</th>
-            </tr>
-          </thead>
-          <tbody>
-            {% for request in finished_requests %}
-                <tr>
-                  <td> {{ request.id }}</td>
-                  <td> {{ request.type_of_process }}</td>
-                  <td> {{ request.date_of_creation }}</td>
-                  <td> {{ request.pid }}</td>
-                  <td> {{ request.status }}</td>
-                </tr>
-            {% endfor %}
-          </tbody>
-        </table>
-      </div>
-
-    {% if error %}
-        <div class="request-error"> Something went wrong, try again </div>
-    {% endif %}
-
-     <div class="request-form">
-    <form action="{% url 'app1:requestProcess' %}" method="POST">
-        <fieldset>
-            <legend><h2> Make new request </h2></legend>
-            {% csrf_token %}
-
-            {{ form }}
-        <br>
-            <input type="hidden" name="user" value="{{ user }}">
-            <input type="submit" value="Request process" />
-        </fieldset>
-    </form>
-         </div>
-
-    </main>
-  </div>
+            <h4 class="table-name">Finished processes</h4>
+            <div class="table-responsive">
+                <table class="table table-striped table-sm">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Type</th>
+                        <th>Date of creation</th>
+                        <th>PID</th>
+                        <th>Status</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for request in finished_requests %}
+                        <tr>
+                            <td> {{ request.id }}</td>
+                            <td> {{ request.type_of_process }}</td>
+                            <td> {{ request.date_of_creation }}</td>
+                            <td> {{ request.pid }}</td>
+                            <td> {{ request.status }}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
 </div>
 
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-      <script>window.jQuery || document.write('<script src="/docs/4.2/assets/js/vendor/jquery-slim.min.js"><\/script>')</script><script src="/docs/4.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-zDnhMsjVZfS3hiP7oCBRmfjkQC4fzxVxFhBx8Hkz2aZX8gEvA/jsP3eXRCvzTofP" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
-        <script src="dashboard.js"></script></body>
-  </body>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script>window.jQuery || document.write('<script src="/docs/4.2/assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+<script src="/docs/4.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-zDnhMsjVZfS3hiP7oCBRmfjkQC4fzxVxFhBx8Hkz2aZX8gEvA/jsP3eXRCvzTofP"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+<script src="dashboard.js"></script>
+</body>
+</body>

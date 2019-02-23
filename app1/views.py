@@ -34,7 +34,7 @@ def login(request):
                 request.session['email'] = user.email
                 context['user'] = user
                 logging.info('User: ' + user.user_name + ' has logged in.')
-                return render(request, "app1/home.html", context)
+                return render(request, "app1/home.html", load_user_processes(user))
             else:
                 logging.error('User: ' + user.user_name + ' has tried to log in with'
                                                           ' a wrong email ( ' + request.POST['email'] + ' ).')
@@ -51,14 +51,8 @@ def login(request):
 
 # Load home page and update Request database
 def logged(request):
-
     user = User.objects.get(user_name=request.session['username'])
-    # it could maybe be optimized like: req=Request.obj.filter(user=user) req1 = req.filter(status= ...
-    context = {'user': user,
-               'pending_requests': Request.objects.filter(user=user).filter(status='P'),
-               'started_requests': Request.objects.filter(user=user).filter(status='S'),
-               'finished_requests': Request.objects.filter(user=user).filter(status='F')}
-    return render(request, "app1/home.html", context)
+    return render(request, "app1/home.html", load_user_processes(user))
 
 
 def request_process(request):
@@ -79,7 +73,7 @@ def request_process(request):
                            "status": 'P'}, f)
             logging.info("User: "+user.user_name+" has requested a new process"
                                                  " id:"+str(r.id)+", type: "+type_of_process)
-            return render(request, "app1/requestSuccessful.html")
+            return render(request, "app1/home.html", load_user_processes(user))
         else:
             logging.fatal("User: " + user.user_name + " tried to request a process but was an error validating the form")
             form = ProcessType()
@@ -93,3 +87,12 @@ def request_process(request):
 
 def request_successful(request):
     return render(request, "app1/requestSuccessful.html")
+
+
+def load_user_processes(user):
+    # it could maybe be optimized like: req=Request.obj.filter(user=user) req1 = req.filter(status= ...
+    context = {'user': user,
+               'pending_requests': Request.objects.filter(user=user).filter(status='P'),
+               'started_requests': Request.objects.filter(user=user).filter(status='S'),
+               'finished_requests': Request.objects.filter(user=user).filter(status='F')}
+    return context

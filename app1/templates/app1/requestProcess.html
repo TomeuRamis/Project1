@@ -1,23 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Request a new process</title>
+    <title>Request new process</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <style>
+        .card-title{
+            margin-left: 75px;
+        }
+        .request-error {
+            background-color: #f2dede;
+            text-align: center;
+            min-width: fit-content;
+            max-width: content-box;
+            max-height: 30px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .request-form {
+            background-color: #d9edf7;
+            text-align: left;
+            padding: 15px;
+            margin-left: 75px;
+            margin-right: 75px;
+            border-radius: 5px;
+        }
+        .process_form{
+
+        }
+    </style>
 </head>
 <body>
-    {% if error %}
-        <span style="color: red; "> ERROR: Something went wrong, try again </span>
-    {% endif %}
 
+<div class="container">
+    <h2>Process types</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dictum risus quis tempus convallis.
+        Mauris sit amet turpis commodo, viverra odio eu, sollicitudin odio. </p>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Email</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Default</td>
+            <td>Defaultson</td>
+            <td>def@somemail.com</td>
+        </tr>
+        <tr class="success">
+            <td>Success</td>
+            <td>Doe</td>
+            <td>john@example.com</td>
+        </tr>
+        <tr class="danger">
+            <td>Danger</td>
+            <td>Moe</td>
+            <td>mary@example.com</td>
+        </tr>
+        <tr class="info">
+            <td>Info</td>
+            <td>Dooley</td>
+            <td>july@example.com</td>
+        </tr>
+        <tr class="warning">
+            <td>Warning</td>
+            <td>Refs</td>
+            <td>bo@example.com</td>
+        </tr>
+        <tr class="active">
+            <td>Active</td>
+            <td>Activeson</td>
+            <td>act@example.com</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+{% if error %}
+    <div class="request-error"> Something went wrong, try again</div>
+{% endif %}
+<h2 class="card-title">Make new request</h2>
+<div class="request-form">
     <form action="{% url 'app1:requestProcess' %}" method="POST">
         <fieldset>
-            <legend> Request </legend>
-            {% csrf_token %}
-            {{ form }}
-        <br>
+            <div class="process_form">
+                {% csrf_token %}
+                {{ form }}
+            </div>
+            <br>
             <input type="hidden" name="user" value="{{ user }}">
-            <input type="submit" value="Request process" />
+            <input type="submit" value="Request process"/>
         </fieldset>
     </form>
+</div>
+
 </body>
 </html>

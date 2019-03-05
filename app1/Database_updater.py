@@ -17,23 +17,27 @@ logging.basicConfig(filename='web_page.log',
                     datefmt='%d/%m/%Y %H:%M:%S')
 
 
-def check_processes(user):
+def check_processes():
 
     try:
-        user = User.objects.get(user=user)
-        # Get all processes that have not been started yet, and compare them with
-        # the Files/InProgress folder to update the database
-        database_requests = Request.objects.filter(user=user).filter(status='P')
-        for db_req in enumerate(database_requests):
-            for file in enumerate(os.listdir(pathInProgress)):
-                with open(pathInProgress + str(file), 'w') as f:
-                    req = json.load(f)
-                    if db_req.id == req['id']:
-                        print("hello")
+        # Update database with the file system
+        files_to_delete = []
+        for file in enumerate(os.listdir(pathInProgress)):
+            with open(pathInProgress + str(file), 'w') as f:
+                req = json.load(f)
+                try:
+                    db_req = Request.objects.filter(id=req['id'])
+                    if not db_req.status == 'S' :
+                        req['status'] = 'F'
+                        with open(pathFinish, 'w') as g:
+                            json.dump(req)
+                        files_to_delete.append(file)
+
+                except Request.DoesNotExist:
+                    req['status'] = 'E'  # ERROR
+
+        for fi in files_to_delete:
+            os.remove(fi)
 
     except IOError:
         logging.fatal("There was a I/O problem updating the processes of User: " + user.user_name)
-
-
-
-upd_db()

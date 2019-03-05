@@ -2763,3 +2763,20 @@ django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 259: '
 [23/02/2019 16:58:22] WARNING: Not Found: /app1/requestProcess/dashboard.js
 [23/02/2019 16:58:22] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
 [23/02/2019 16:58:22] WARNING: Not Found: /app1/requestProcess/dashboard.js
+[23/02/2019 17:14:52] WARNING: Not Found: /favicon.ico
+[23/02/2019 17:16:25] INFO: User: admin has logged in.
+[23/02/2019 17:16:26] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[23/02/2019 17:16:26] WARNING: Not Found: /app1/login/dashboard.js
+[23/02/2019 17:16:26] WARNING: Not Found: /app1/login/home.css
+[23/02/2019 17:16:26] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[23/02/2019 17:16:26] WARNING: Not Found: /app1/login/dashboard.js
+[23/02/2019 17:17:07] WARNING: Not Found: /favicon.ico
+[23/02/2019 17:17:44] INFO: User: admin has requested a new process id:58, type: wait
+[23/02/2019 17:17:44] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[23/02/2019 17:17:44] WARNING: Not Found: /app1/requestProcess/home.css
+[23/02/2019 17:17:44] WARNING: Not Found: /app1/requestProcess/dashboard.js
+[23/02/2019 17:17:44] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[23/02/2019 17:17:44] WARNING: Not Found: /app1/requestProcess/dashboard.js
+[23/02/2019 17:17:44] WARNING: Not Found: /favicon.ico
+[23/02/2019 18:29:36] WARNING: Not Found: /
+[23/02/2019 18:29:36] WARNING: Not Found: /favicon.ico

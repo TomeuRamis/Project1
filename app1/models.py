@@ -11,6 +11,21 @@ class User(models.Model):
         return str(self.user_name)
 
 
+class Topology(models.Model):
+    ATTRIBUTE1 = (
+        ('a1', 1),
+        ('a2', 2),
+        ('a3', 3)
+    )
+    ATTRIBUTE2 = (
+        ('b1', 'a'),
+        ('b2', 'b'),
+        ('b3', 'c')
+    )
+    attribute1 = models.IntegerField(choices=ATTRIBUTE1)
+    attribute2 = models.CharField(max_length=10, choices=ATTRIBUTE2, default='b1')
+
+
 class Request(models.Model):
     TYPE_OF_PROCESS = (
         ('fibonacci', 'fibonacci'),
@@ -23,9 +38,12 @@ class Request(models.Model):
     )
     type_of_process = models.CharField(max_length=20, choices=TYPE_OF_PROCESS)
     date_of_creation = models.DateTimeField(auto_now_add=True)
+    time = models.DurationField(default=0)
     pid = models.IntegerField(default=-1)
     status = models.CharField(max_length=1, choices=STATUS, default='P')
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+    topology = models.ForeignKey(Topology, on_delete=models.CASCADE)
 
     def __str__(self):
-        return '['+str(self.id)+'] ' + str(self.type_of_process)
+        return '[' + str(self.id) + '] type:' + str(self.type_of_process) + ', topology: ' +str(self.topology) +\
+               ', by: ' + str(self.user) + ', time: ' + str(self.time)

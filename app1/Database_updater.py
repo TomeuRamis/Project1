@@ -27,7 +27,7 @@ def check_processes():
                 req = json.load(f)
                 try:
                     db_req = Request.objects.filter(id=req['id'])
-                    if not db_req.status == 'S' :
+                    if not db_req.status == 'S':
                         req['status'] = 'F'
                         with open(pathFinish, 'w') as g:
                             json.dump(req)

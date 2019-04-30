@@ -8,3 +8,4 @@ class ProcessType(forms.Form):
         ('wait', 'wait')
     )
     type_of_process = forms.ChoiceField(choices=TYPE_OF_PROCESS)
+

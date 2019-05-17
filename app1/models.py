@@ -6,7 +6,7 @@ from django.db import models
 class User(models.Model):
     user_name = models.CharField(max_length=100)
     email = models.EmailField(max_length=30)
-    password = models.CharField(widget=models.PasswordInput)
+    password = models.CharField(max_length=128, default=None)  # Is it secure?
 
     def __str__(self):
         return str(self.user_name)
@@ -24,11 +24,9 @@ class Request(models.Model):
     )
     type_of_process = models.CharField(max_length=20, choices=TYPE_OF_PROCESS)
     date_of_creation = models.DateTimeField(auto_now_add=True)
-    time = models.DurationField(default=0)
-    pid = models.IntegerField(default=-1)
+    time = models.DurationField()
     status = models.CharField(max_length=1, choices=STATUS, default='P')
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    topology = models.ForeignKey(Topology, on_delete=models.CASCADE)
 
     def __str__(self):
         return '[' + str(self.id) + '] type:' + str(self.type_of_process) + ', topology: ' +str(self.topology) +\

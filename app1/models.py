@@ -6,24 +6,10 @@ from django.db import models
 class User(models.Model):
     user_name = models.CharField(max_length=100)
     email = models.EmailField(max_length=30)
+    password = models.CharField(widget=models.PasswordInput)
 
     def __str__(self):
         return str(self.user_name)
-
-
-class Topology(models.Model):
-    ATTRIBUTE1 = (
-        ('a1', 1),
-        ('a2', 2),
-        ('a3', 3)
-    )
-    ATTRIBUTE2 = (
-        ('b1', 'a'),
-        ('b2', 'b'),
-        ('b3', 'c')
-    )
-    attribute1 = models.IntegerField(choices=ATTRIBUTE1)
-    attribute2 = models.CharField(max_length=10, choices=ATTRIBUTE2, default='b1')
 
 
 class Request(models.Model):

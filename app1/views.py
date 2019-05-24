@@ -4,12 +4,14 @@ from .models import Request, User
 import json
 import os
 import logging
+import datetime
 
 
 absPath = os.getcwd()
-pathReq = os.path.join(absPath, "app1/ProcessManager/Files/Requests/")
-pathInProgress = os.path.join(absPath, "app1/ProcessManager/Files/InProgress/")
-pathFinish = os.path.join(absPath, "/app1/ProcessManager/Files/Finished/")
+userPath = os.path.join(absPath, "app1/ProcessManager/Files/")
+pathReq = "/Requests/"
+pathInProgress = "/InProgress/"
+pathFinish = "/Finished/"
 
 logging.basicConfig(filename='web_page.log',
                     level=logging.INFO,
@@ -62,14 +64,20 @@ def request_process(request):
         if form.is_valid():
             type_of_process = form.cleaned_data['type_of_process']
             # Create and save the new request to the DataBase
-            r = Request(type_of_process=type_of_process, user=user)
+            r = Request(type_of_process=type_of_process,
+                        date_of_creation=datetime.datetime.now(),
+                        date_of_start=None,
+                        date_of_finish=None,
+                        status='P',
+                        user=user)
             r.save()
             # Create the new file to store the Request
-            with open(os.path.join(pathReq, "request"+str(r.id)+".json"), "w+") as f:
+            with open(os.path.join(userPath, user.user_name, pathReq, +str(r.id)+".json"), "w+") as f:
                 json.dump({"id": r.id,
                            "type": type_of_process,
                            "date of creation": str(r.date_of_creation),
-                           "pid": -1,
+                           "date of start": None,
+                           "date of finish": None,
                            "status": 'P'}, f)
             logging.info("User: "+user.user_name+" has requested a new process"
                                                  " id:"+str(r.id)+", type: "+type_of_process)

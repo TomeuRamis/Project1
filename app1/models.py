@@ -24,7 +24,8 @@ class Request(models.Model):
     )
     type_of_process = models.CharField(max_length=20, choices=TYPE_OF_PROCESS)
     date_of_creation = models.DateTimeField(auto_now_add=True)
-    time = models.DurationField()
+    date_of_start = models.DateTimeField(auto_now_add=False)
+    date_of_finish = models.DateTimeField(auto_now_add=False)
     status = models.CharField(max_length=1, choices=STATUS, default='P')
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 

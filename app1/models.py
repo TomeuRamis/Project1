@@ -30,5 +30,5 @@ class Request(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
-        return '[' + str(self.id) + '] type:' + str(self.type_of_process) + ', topology: ' +str(self.topology) +\
+        return '[' + str(self.id) + '] type:' + str(self.type_of_process) + ', topology: ' + str(self.topology) +\
                ', by: ' + str(self.user) + ', time: ' + str(self.time)

@@ -10,5 +10,6 @@ urlpatterns = [
     path('login/', views.login, name="login"),
     path('home/', views.logged, name="logged"),
     path('requestProcess/', views.request_process, name='requestProcess'),
-    path('requestSuccessful/', views.request_successful, name='request_successful')
+    path('requestSuccessful/', views.request_successful, name='request_successful'),
+    path('requestSuccessful', views.post, name='post')
 ]

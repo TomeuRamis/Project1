@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from .forms import ProcessType
 from .models import Request, User
+from django.views.generic.edit import FormView
+from .forms import FileFieldForm
 import json
 import os
 import logging
@@ -60,35 +62,41 @@ def logged(request):
 def request_process(request):
     user = User.objects.get(user_name=request.session['username'])
     if request.method == 'POST':
-        form = ProcessType(request.POST)
+        form = FileFieldForm(request.POST)
+        files = request.FILES.getlist('file_field')
         if form.is_valid():
-            type_of_process = form.cleaned_data['type_of_process']
+
+            for f in files:
+                with open(os.path.join(os.getcwd(), "prueba" + f + ".txt"), "w") as file:
+                    file.write(f)
+                ...  # Do something with each file.
+            type_of_process = form.cleaned_data['files']
             # Create and save the new request to the DataBase
-            r = Request(type_of_process=type_of_process,
-                        date_of_creation=datetime.datetime.now(),
-                        date_of_start=None,
-                        date_of_finish=None,
-                        status='P',
-                        user=user)
-            r.save()
-            # Create the new file to store the Request
-            with open(os.path.join(userPath, user.user_name, pathReq, +str(r.id)+".json"), "w+") as f:
-                json.dump({"id": r.id,
-                           "type": type_of_process,
-                           "date of creation": str(r.date_of_creation),
-                           "date of start": None,
-                           "date of finish": None,
-                           "status": 'P'}, f)
-            logging.info("User: "+user.user_name+" has requested a new process"
-                                                 " id:"+str(r.id)+", type: "+type_of_process)
+            # r = Request(type_of_process=type_of_process,
+            #             date_of_creation=datetime.datetime.now(),
+            #             date_of_start=None,
+            #             date_of_finish=None,
+            #             status='P',
+            #             user=user)
+            # r.save()
+            # # Create the new file to store the Request
+            # with open(os.path.join(userPath, user.user_name, pathReq, +str(r.id)+".json"), "w+") as f:
+            #     json.dump({"id": r.id,
+            #                "type": type_of_process,
+            #                "date of creation": str(r.date_of_creation),
+            #                "date of start": None,
+            #                "date of finish": None,
+            #                "status": 'P'}, f)
+            # logging.info("User: "+user.user_name+" has requested a new process"
+            #                                      " id:"+str(r.id)+", type: "+type_of_process)
             return render(request, "app1/home.html", load_user_processes(user))
         else:
             logging.fatal("User: " + user.user_name + " tried to request a process but was an error validating the form")
-            form = ProcessType()
+            form = FileFieldForm()
             return render(request, "app1/requestProcess.html", {'form': form,
                                                                 'error': True})
     else:
-        form = ProcessType()
+        form = FileFieldForm()
         return render(request, "app1/requestProcess.html", {'form': form,
                                                             'error': False})
 
@@ -104,3 +112,22 @@ def load_user_processes(user):
                'started_requests': Request.objects.filter(user=user).filter(status='S'),
                'finished_requests': Request.objects.filter(user=user).filter(status='F')}
     return context
+
+
+def post(self, request):
+
+    form_class = FileFieldForm
+    template_name = 'requestProcess.html'  # Replace with your template.
+    success_url = 'requestSuccessful.html'  # Replace with your URL or reverse().
+
+    form_class = self.get_form_class()
+    form = self.get_form(form_class)
+    files = request.FILES.getlist('file_field')
+    if form.is_valid():
+        for f in files:
+            with open("prueba"+f+".txt", "w") as file:
+                file.write(f)
+            ...  # Do something with each file.
+        return self.form_valid(form)
+    else:
+        return self.form_invalid(form)

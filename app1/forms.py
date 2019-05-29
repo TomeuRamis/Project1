@@ -9,3 +9,7 @@ class ProcessType(forms.Form):
     )
     type_of_process = forms.ChoiceField(choices=TYPE_OF_PROCESS)
 
+
+class FileFieldForm(forms.Form):
+    file_field = forms.FileField(widget=forms.ClearableFileInput(attrs={'multiple': True}))
+

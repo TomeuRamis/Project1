@@ -5,3 +5,158 @@
 [07/03/2019 08:19:35] WARNING: Not Found: /app1/login/dashboard.js
 [07/03/2019 08:19:35] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
 [07/03/2019 08:19:35] WARNING: Not Found: /app1/login/dashboard.js
+[29/05/2019 20:23:31] WARNING: Not Found: /
+[29/05/2019 20:23:31] WARNING: Not Found: /favicon.ico
+[29/05/2019 20:23:49] ERROR: Internal Server Error: /app1/login/
+Traceback (most recent call last):
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/db/backends/utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/db/backends/sqlite3/base.py", line 296, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.OperationalError: no such column: app1_user.password
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/bartomeu/Documents/project1/app1/views.py", line 35, in login
+    user = User.objects.get(user_name=request.POST['username'])
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/db/models/query.py", line 393, in get
+    num = len(clone)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/db/models/query.py", line 250, in __len__
+    self._fetch_all()
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/db/models/query.py", line 1186, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/db/models/query.py", line 54, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 1065, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/db/backends/utils.py", line 100, in execute
+    return super().execute(sql, params)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/db/backends/utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/db/backends/utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/db/backends/utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/db/utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/db/backends/utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/db/backends/sqlite3/base.py", line 296, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.OperationalError: no such column: app1_user.password
+[29/05/2019 20:33:37] ERROR: There was an attempt to log in with the wrong credentials user name: admin, email: admin@gmail.com
+[29/05/2019 20:37:19] WARNING: Not Found: /favicon.ico
+[29/05/2019 20:37:47] INFO: User: admin has logged in.
+[29/05/2019 20:37:47] WARNING: Not Found: /app1/login/home.css
+[29/05/2019 20:37:47] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[29/05/2019 20:37:47] WARNING: Not Found: /app1/login/dashboard.js
+[29/05/2019 20:37:47] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[29/05/2019 20:37:50] ERROR: Internal Server Error: /app1/requestProcess/
+Traceback (most recent call last):
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/bartomeu/Documents/project1/app1/views.py", line 95, in request_process
+    'error': False})
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/template/base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/template/base.py", line 904, in render_annotated
+    return self.render(context)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/template/defaulttags.py", line 442, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/urls/base.py", line 90, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/urls/resolvers.py", line 622, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'post' not found. 'post' is not a valid view function or pattern name.
+[29/05/2019 20:39:56] ERROR: Internal Server Error: /app1/requestProcess/
+Traceback (most recent call last):
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/bartomeu/Documents/project1/app1/views.py", line 95, in request_process
+    'error': False})
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/template/base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/template/base.py", line 904, in render_annotated
+    return self.render(context)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/template/defaulttags.py", line 442, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/urls/base.py", line 90, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/urls/resolvers.py", line 622, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'post' not found. 'post' is not a valid view function or pattern name.
+[29/05/2019 20:44:07] WARNING: Not Found: /favicon.ico
+[29/05/2019 20:44:18] CRITICAL: User: admin tried to request a process but was an error validating the form
+[29/05/2019 20:46:39] CRITICAL: User: admin tried to request a process but was an error validating the form
+[29/05/2019 20:46:48] CRITICAL: User: admin tried to request a process but was an error validating the form
+[29/05/2019 20:49:38] INFO: User: admin has logged in.
+[29/05/2019 20:49:38] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[29/05/2019 20:49:38] WARNING: Not Found: /app1/login/dashboard.js
+[29/05/2019 20:49:38] WARNING: Not Found: /app1/login/home.css
+[29/05/2019 20:49:39] WARNING: Not Found: /docs/4.2/dist/js/bootstrap.bundle.min.js
+[29/05/2019 20:49:39] WARNING: Not Found: /app1/login/dashboard.js
+[29/05/2019 20:49:40] WARNING: Not Found: /favicon.ico
+[29/05/2019 20:49:45] CRITICAL: User: admin tried to request a process but was an error validating the form
+[29/05/2019 20:52:15] ERROR: Internal Server Error: /app1/requestProcess/
+Traceback (most recent call last):
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+TypeError: request_process() missing 1 required positional argument: 'request'
+[29/05/2019 20:54:02] CRITICAL: User: admin tried to request a process but was an error validating the form
+[29/05/2019 20:54:02] WARNING: Not Found: /favicon.ico
+[29/05/2019 20:54:08] CRITICAL: User: admin tried to request a process but was an error validating the form
+[29/05/2019 20:54:49] ERROR: Internal Server Error: /app1/requestProcess/
+Traceback (most recent call last):
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/bartomeu/djenv/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/bartomeu/Documents/project1/app1/views.py", line 66, in request_process
+    form_class = form.get_form_class()
+AttributeError: 'FileFieldForm' object has no attribute 'get_form_class'
+[29/05/2019 20:54:49] WARNING: Not Found: /favicon.ico
+[29/05/2019 20:55:15] CRITICAL: User: admin tried to request a process but was an error validating the form
+[29/05/2019 20:55:20] CRITICAL: User: admin tried to request a process but was an error validating the form

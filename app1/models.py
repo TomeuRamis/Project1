@@ -24,11 +24,12 @@ class Request(models.Model):
     )
     type_of_process = models.CharField(max_length=20, choices=TYPE_OF_PROCESS)
     date_of_creation = models.DateTimeField(auto_now_add=True)
-    date_of_start = models.DateTimeField(auto_now_add=False)
-    date_of_finish = models.DateTimeField(auto_now_add=False)
+    date_of_start = models.DateTimeField(auto_now_add=False, blank=True, null=True)
+    date_of_finish = models.DateTimeField(auto_now_add=False, blank=True, null=True)
     status = models.CharField(max_length=1, choices=STATUS, default='P')
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
-        return '[' + str(self.id) + '] type:' + str(self.type_of_process) + ', topology: ' + str(self.topology) +\
-               ', by: ' + str(self.user) + ', time: ' + str(self.time)
+        return '[' + str(self.id) + '] type:' + str(self.type_of_process), ', by: ' + str(self.user) + \
+               ', date of creation: ' + str(self.date_of_creation) + ', date of start: ' + str(self.date_of_creation) +\
+               ', date of finish: ' + str(self.date_of_finish)

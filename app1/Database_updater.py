@@ -23,20 +23,21 @@ def check_processes():
     try:
         # Update database with the file system
         files_to_delete = []
-        for directory in enumerate(os.listdir(usersPath)):
-            for file in enumerate(os.listdir(os.path.join((directory, pathInProgress)))):
-                with open(file, 'w') as f:
-                    req = json.load(f)
-                    try:
-                        db_req = Request.objects.filter(id=req['id'])
-                        if not db_req.status == 'S':
-                            req['status'] = 'F'
-                            with open(os.path.join(directory, pathFinish, str(file)), 'w') as g:
-                                json.dump(req, g)
-                            files_to_delete.append(file)
-
-                    except Request.DoesNotExist:
-                        req['status'] = 'E'  # ERROR
+        for usr_directory in enumerate(os.listdir(usersPath)):
+            for files_directory in enumerate(os.listdir(os.path.join((usr_directory, pathInProgress)))):
+                for file in enumerate(os.listdir(files_directory)):
+                    if os.path.isfile(file):
+                        with open(file, 'w') as f:
+                            req = json.load(f)
+                            try:
+                                db_req = Request.objects.filter(id=req['id'])
+                                if not db_req.status == 'S':
+                                    req['status'] = 'F'
+                                    with open(os.path.join(usr_directory, pathFinish, str(req['id'])+'/', str(file)), 'w') as g:
+                                        json.dump(req, g)
+                                    files_to_delete.append(file)
+                            except Request.DoesNotExist:
+                                req['status'] = 'E'  # ERROR
 
             for fi in files_to_delete:
                 os.remove(fi)

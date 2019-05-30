@@ -85,20 +85,18 @@
     </table>
 </div>
 
+<h2 class="card-title">Make new request</h2>
 {% if error %}
     <div class="request-error"> Something went wrong, try again</div>
 {% endif %}
-<h2 class="card-title">Make new request</h2>
 <div class="request-form">
-    <form action="{% url 'app1:requestProcess' %}" method="POST">
-        <fieldset>
-            <div class="process_form">
-                {% csrf_token %}
-                {{ form }}
-            </div>
-            <br>
-            <input type="hidden" name="user" value="{{ user }}">
-            <input type="submit" value="Request process"/>
-        </fieldset>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form1 }}
+        {{ form2 }}
+        <br>
+        <input type="hidden" name="user" value="{{ user }}">
+        <button type="submit">Request</button>
     </form>
 </div>
+

@@ -1,12 +1,13 @@
 from django.shortcuts import render
+from django.core.files.storage import FileSystemStorage
 from .forms import ProcessType
 from .models import Request, User
-from django.views.generic.edit import FormView
 from .forms import FileFieldForm
 import json
 import os
 import logging
 import datetime
+import shutil
 
 
 absPath = os.getcwd()
@@ -62,42 +63,41 @@ def logged(request):
 def request_process(request):
     user = User.objects.get(user_name=request.session['username'])
     if request.method == 'POST':
-        form = FileFieldForm(request.POST)
-        files = request.FILES.getlist('file_field')
-        if form.is_valid():
+        user.validate()
+        form = request.POST
+        type_of_process = form['type_of_process']
 
-            for f in files:
-                with open(os.path.join(os.getcwd(), "prueba" + f + ".txt"), "w") as file:
-                    file.write(f)
-                ...  # Do something with each file.
-            type_of_process = form.cleaned_data['files']
-            # Create and save the new request to the DataBase
-            # r = Request(type_of_process=type_of_process,
-            #             date_of_creation=datetime.datetime.now(),
-            #             date_of_start=None,
-            #             date_of_finish=None,
-            #             status='P',
-            #             user=user)
-            # r.save()
-            # # Create the new file to store the Request
-            # with open(os.path.join(userPath, user.user_name, pathReq, +str(r.id)+".json"), "w+") as f:
-            #     json.dump({"id": r.id,
-            #                "type": type_of_process,
-            #                "date of creation": str(r.date_of_creation),
-            #                "date of start": None,
-            #                "date of finish": None,
-            #                "status": 'P'}, f)
-            # logging.info("User: "+user.user_name+" has requested a new process"
-            #                                      " id:"+str(r.id)+", type: "+type_of_process)
-            return render(request, "app1/home.html", load_user_processes(user))
-        else:
-            logging.fatal("User: " + user.user_name + " tried to request a process but was an error validating the form")
-            form = FileFieldForm()
-            return render(request, "app1/requestProcess.html", {'form': form,
-                                                                'error': True})
+        # Create and save the new request to the DataBase
+        r = Request(type_of_process=type_of_process,
+                    date_of_creation=datetime.datetime.now(),
+                    date_of_start=datetime.MINYEAR,
+                    date_of_finish=datetime.MINYEAR,
+                    status='P',
+                    user=user)
+        r.save()
+        # Create the new file to store the Request
+        with open(os.path.join(userPath, user.user_name, pathReq, str(r.id)+'/', str(r.id)+".json"), "w+") as f:
+            json.dump({"id": r.id,
+                       "type": type_of_process,
+                       "date of creation": str(r.date_of_creation),
+                       "date of start": None,
+                       "date of finish": None,
+                       "status": 'P'}, f)
+        logging.info("User: "+user.user_name+" has requested a new process"
+                                             " id:"+str(r.id)+", type: "+type_of_process)
+
+        # Process files
+        files = request.FILES.getlist('file_field')
+        fs = FileSystemStorage()
+        for f in files:
+            name = fs.save(f.name, f)
+            shutil.move(name, os.path.join(userPath, user.user_name, pathReq, str(r.id)+'/'))
+        return render(request, "app1/home.html", load_user_processes(user))
     else:
-        form = FileFieldForm()
-        return render(request, "app1/requestProcess.html", {'form': form,
+        form1 = FileFieldForm()
+        form2 = ProcessType()
+        return render(request, "app1/requestProcess.html", {'form1': form1,
+                                                            'form2': form2,
                                                             'error': False})
 
 
